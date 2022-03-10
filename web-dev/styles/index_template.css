@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+/*Edit Style within the List and Anchor Tag in the Navigation Bar */
+li,a {
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+/*Edit Style in all of HEADER which is the Navigation Bar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+/*Edit Style in class nav_links which is the Navigation Bar */
+.nav__links{
+    list-style: none;
+}
+.nav__links :hover {
+    color: #F05454;
+}
+.nav__links li {
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+/*Edit Style in class fixed__footer where PHP function for date is used */
+.fixed__footer {
+    position: fixed;
+    bottom: 0px;
+    right: 10%;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+}
