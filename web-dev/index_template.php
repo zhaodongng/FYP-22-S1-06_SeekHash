@@ -45,9 +45,7 @@
         </header>
         
         <div class="fixed__footer">
-            <?php 
-            echo "Date:". date(" d-m-y")."<br>"
-            ?>
+            &copy;2023 CopyRight By Seek#
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

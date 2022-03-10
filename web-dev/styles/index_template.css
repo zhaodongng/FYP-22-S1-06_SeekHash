@@ -17,15 +17,7 @@ header {
 
 
 
-/*Edit Style in class fixed__footer where PHP function for date is used */
-.fixed__footer {
-    position: fixed;
-    bottom: 0px;
-    right: 10%;
-    font-weight: 400;
-    font-size: 16px;
-    text-decoration: none;
-}
+
 
 /*logo*/
 .logo{
@@ -82,4 +74,15 @@ li,a {
     background-color: #061551;
     color: #854DFF;
     border: none;
+}
+
+/*footer*/
+.fixed__footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color:#854DFF;
+    font-size: 14px;
+    text-align: center;
 }
