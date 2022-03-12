@@ -44,7 +44,25 @@
         </header>
 
         <!-- Program Page Contents -->
-        <h2>Testing - This is the program page.</h2>
+        <div class="programbox">
+            <form action="processhash.php" method="post">
+                <div class="uploadhashbox">
+                    <h2><b>Upload Hash Code</b></h2>
+                    <input type="text" name="hashcode" value="Type your hash output"/>&nbsp;&nbsp;
+                    <input type="submit" />
+                </div>
+            </form>
+
+            <hr />
+
+            <form action="processsourcecode.php" method="post">
+                <div class="uploadsourcecodebox">
+                    <h2><b>Upload Your Source Code</b></h2>
+                    <input type="file" name="sourcecode" multiple/><br />
+                    <input type="submit" value="UPLOAD SOURCE CODE"/>
+                </div>
+            </form>
+        </div>
         
         <div class="fixed__footer">
             &copy;2023 CopyRight By Seek#
