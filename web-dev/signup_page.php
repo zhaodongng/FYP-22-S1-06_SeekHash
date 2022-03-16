@@ -16,17 +16,18 @@
         <!-- Sign Up Page Contents -->
         <div class="cancelbtn">
             <a href="index_template.php">
-                <img src="img/xmark-solid.svg" alt="Starbucks" />
+                <img src="img/xmark-solid.svg" />
             </a>
         </div>
 
         <div class="signupbox">
             <h1>Sign Up</h1>
             <form action="processsignup.php" method="post">
-                <input type-"text" name="signup_username" onfocus="this.value = ''" value="User Name"/><br />
-                <input type-"text" name="signup_email" onfocus="this.value = ''" value="Email"/><br />
-                <input type-"text" name="signup_password" onfocus="this.value = ''" value="Password"/><br />
-                <input type-"text" name="signup_confirmpassword" onfocus="this.value = ''" value="Confirm Password"/><br />
+                <input type="text" name="signup_username" onfocus="this.value = ''" value="User Name"/><br />
+                <input type="text" name="signup_email" onfocus="this.value = ''" value="Email"/><br />
+                <input type="text" name="signup_password" onfocus="this.value = ''" value="Password"/><br />
+                <input type="text" name="signup_confirmpassword" onfocus="this.value = ''" value="Confirm Password"/><br />
+                <input type="submit" name="signup_submit" value="Sign Up" class="signupbtn"/>
             </form>
             <h2>Already a member?<a href="login_page.php">Log In</a></h2>
         </div>
