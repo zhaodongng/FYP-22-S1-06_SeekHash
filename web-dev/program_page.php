@@ -48,7 +48,7 @@
             <form action="processhash.php" method="post">
                 <div class="uploadhashbox">
                     <h2><b>Upload Hash Code</b></h2>
-                    <input type="text" name="hashcode" value="Type your hash output"/>&nbsp;&nbsp;
+                    <input type="text" name="hashcode" onfocus="this.value = ''" value="Type your hash output"/>&nbsp;&nbsp;
                     <input type="submit" />
                 </div>
             </form>

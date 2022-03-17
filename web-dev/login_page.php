@@ -7,29 +7,29 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <title>SeekHash - Sign Up Page</title>
+        <title>SeekHash - Login Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel= "stylesheet" href="styles/signup_page.css" type="text/css"/> 
+        <link rel= "stylesheet" href="styles/login_page.css" type="text/css"/> 
     </head>
     <body>
-        <!-- Sign Up Page Contents -->
+        <!-- Login Page Contents -->
         <div class="cancelbtn">
             <a href="index_template.php">
                 <img src="img/xmark-solid.svg" />
             </a>
         </div>
 
-        <div class="signupbox">
-            <h1>Sign Up</h1>
-            <form action="processsignup.php" method="post">
-                <input type="text" name="signup_username" onfocus="this.value = ''" value="User Name"/><br />
-                <input type="text" name="signup_email" onfocus="this.value = ''" value="Email"/><br />
-                <input type="text" name="signup_password" onfocus="this.value = ''" value="Password"/><br />
-                <input type="text" name="signup_confirmpassword" onfocus="this.value = ''" value="Confirm Password"/><br />
-                <input type="submit" name="signup_submit" value="Sign Up" class="signupbtn"/>
+        <div class="loginbox">
+            <h1>Log In</h1>
+            <h2>New to this site?<a href="signup_page.php">Sign Up</a></h2>
+            <form action="processlogin.php" method="post">
+                <p>Username *</p>
+                <input type="text" name="login_username" onfocus="this.value = ''" value="Username"/><br />
+                <p>Password *</p>
+                <input type="text" name="login_password" onfocus="this.value = ''" value="Password"/><br />
+                <input type="submit" name="login_submit" value="Log In" class="loginbtn"/>
             </form>
-            <h2>Already a member?<a href="login_page.php">Log In</a></h2>
         </div>
 
         <!-- Optional JavaScript -->
