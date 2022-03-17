@@ -6,18 +6,12 @@
     padding: 0;
 }
 
-
-
 /*Edit Style in all of HEADER which is the Navigation Bar */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-
-
-
 
 /*logo*/
 .logo{
@@ -51,10 +45,7 @@ li,a {
     font-size: 16px;
     text-decoration: none;
 }
-.nav__links{
-    list-style: none;
-    background-color: #061551;
-}
+
 .nav__links :hover {
     color: #854DFF;
 }
