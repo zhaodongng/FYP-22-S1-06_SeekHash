@@ -15,7 +15,7 @@
     <body>
         <!-- Sign Up Page Contents -->
         <div class="cancelbtn">
-            <a href="index_template.php">
+            <a href="home.html">
                 <img src="img/xmark-solid.svg" />
             </a>
         </div>
