@@ -27,7 +27,7 @@
                 <p>Username *</p>
                 <input type="text" name="login_username" onfocus="this.value = ''" value="Username"/><br />
                 <p>Password *</p>
-                <input type="text" name="login_password" onfocus="this.value = ''" value="Password"/><br />
+                <input type="password" name="login_password" onfocus="this.value = ''"/><br />
                 <input type="submit" name="login_submit" value="Log In" class="loginbtn"/>
             </form>
         </div>

@@ -18,7 +18,7 @@
     
             try{
                 $conn = mysqli_connect($servername, $username, $password, $dbname);
-                //echo "<p>Connection to seekhash_db successful</p>\n";
+                echo "<p>Connection to seekhash_db successful</p>\n";
             }
             catch (mysqli_sql_exception $e)
             {
@@ -26,21 +26,26 @@
                     mysqli_connect_error());
             }
 
-            $sql = "INSERT INTO seekhash_db.user_info(user_id, name, password, email) 
-                    VALUES (NULL,'{$_POST["signup_username"]}','{$_POST["signup_password"]}','{$_POST["signup_email"]}')";
+            $sql = "SELECT * FROM seekhash_db.user_info WHERE password = '{$_POST["login_password"]}'";
 
             try{
                 $conn = mysqli_query($conn, $sql);
-                echo "<p>INSERT row to seekhash_db.user_info successfully</p>\n";
+                echo "Select from seekhash_db.user_info successfully";
+                $users = array();
+                while ($row = mysqli_fetch_assoc($conn)) {
+                    $users[] = $row;
+                }
+                echo "<pre>";
+                print_r($users);
+                echo "</pre>";
             }
             catch (mysqli_sql_exception $e)
             {
-                die("Insert row to seekhash_db.user_info failed: " . mysqli_connect_errno() . " - " . 
+                die("Select from seekhash_db.user_info failed: " . mysqli_connect_errno() . " - " . 
                     mysqli_connect_error());
             }
 
             include "home.html";
-            //echo "<p>New user has been signed up.</p>";
 
             mysqli_close($conn);
 		?>
