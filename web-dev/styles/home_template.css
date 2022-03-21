@@ -1,7 +1,6 @@
   *{
     margin: 0; padding: 0;
     box-sizing: border-box;
-    text-transform: capitalize;
     transition: all .2s linear;
     font-family: 'Poppins', sans-serif;
   }
@@ -185,4 +184,72 @@
   #subscription a:hover{
     background-color: white;
     color: #854DFF;
+  }
+
+  /*history page*/
+  .history{
+    min-height: 100vh;
+    justify-content: center;
+    background-image: url("../img/background1.png");
+    background-size: cover;
+  }
+
+  .history h4{
+    color: aliceblue;
+    margin-left: 5rem;
+    font-size: 2rem;
+  }
+
+  .history .row1{
+    padding: 1rem 2rem;
+  }
+
+  .history .row2{
+    padding: 0rem 6rem;
+  }
+
+  .row2 .report{
+    background-color: aliceblue;
+    border-radius: 2rem;
+    width: 35rem;
+    height: 13rem;
+  }
+
+  .report h5{
+    margin-left: 1rem; 
+    padding-top: .5rem;
+    color: #854DFF;
+  }
+
+  .report p{
+    margin-left: 1rem; 
+  }
+
+  .report a{
+    position: fixed;
+    margin-left: 29rem;
+    margin-top: 5.6rem;
+  }
+  .row2 .report2{
+    background-color: aliceblue;
+    border-radius: 2rem;
+    width: 35rem;
+    height: 13rem;
+    margin-left: 2rem;
+  }
+
+  .report2 h5{
+    margin-left: 1rem; 
+    padding-top: .5rem;
+    color: #854DFF;
+  }
+
+  .report2 p{
+    margin-left: 1rem; 
+  }
+
+  .report2 a{
+    position: fixed;
+    margin-left: 29rem;
+    margin-top: 5.6rem;
   }

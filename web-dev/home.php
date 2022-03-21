@@ -14,9 +14,8 @@
         <link rel= "stylesheet" href="styles/home_template.css" type="text/css"/> 
     </head>
     <body>
-
     <nav class="navbar">
-
+    
     <ul>
 
     <li>
