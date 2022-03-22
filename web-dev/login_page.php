@@ -15,7 +15,7 @@
     <body>
         <!-- Login Page Contents -->
         <div class="cancelbtn">
-            <a href="home.html">
+            <a href="home.php">
                 <img src="img/xmark-solid.svg" />
             </a>
         </div>
