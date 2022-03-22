@@ -12,7 +12,7 @@
 		<?php
             echo "<p>Source code processing ... </p>";
 
-            $command = escapeshellcmd('/usr/bin/python3 python_exec_test.py');
+            $command = escapeshellcmd("/usr/local/bin/python3 python_exec_test.py");
             $output = shell_exec($command);
             echo $output;
         ?>
