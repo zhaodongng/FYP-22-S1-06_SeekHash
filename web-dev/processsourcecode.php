@@ -11,10 +11,9 @@
     <body>
 		<?php
             echo "<p>Source code processing ... </p>";
-            // Works on OS X
-            // Need to check if it works on Windows
-            $command = escapeshellcmd();
-            $output = shell_exec("/usr/local/bin/python3 seekhash_v2.py sourceCode.txt 2>&1");
+
+            $command = escapeshellcmd('/usr/bin/python3 python_exec_test.py');
+            $output = shell_exec($command);
             echo $output;
         ?>
     </body>
