@@ -20,7 +20,6 @@
                                 <li><a href="#">Report</a></li>
                                 <li><a href="history.php">History</a></li>
                                 <li><a href="#">Program</a></li>
-                                <li><a href="#">Subscriptions</a></li>
                             </ul>
                         </nav>
                         <button type="button" class="logInBtn">
