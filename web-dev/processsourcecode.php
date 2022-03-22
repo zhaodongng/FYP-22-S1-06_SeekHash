@@ -11,9 +11,8 @@
     <body>
 		<?php
             echo "<p>Source code processing ... </p>";
-            // Works on OS X
-            // Need to check if it works on Windows
-            $command = escapeshellcmd('/usr/local/bin/python3 python_exec_test.py');
+
+            $command = escapeshellcmd('/usr/bin/python3 python_exec_test.py');
             $output = shell_exec($command);
             echo $output;
         ?>
