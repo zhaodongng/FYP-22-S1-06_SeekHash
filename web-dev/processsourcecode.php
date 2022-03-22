@@ -13,8 +13,8 @@
             echo "<p>Source code processing ... </p>";
             // Works on OS X
             // Need to check if it works on Windows
-            $command = escapeshellcmd("/usr/local/bin/python3 seekhash_v2.py sourceCode.txt");
-            $output = shell_exec($command);
+            $command = escapeshellcmd();
+            $output = shell_exec("/usr/local/bin/python3 seekhash_v2.py sourceCode.txt 2>&1");
             echo $output;
         ?>
     </body>
