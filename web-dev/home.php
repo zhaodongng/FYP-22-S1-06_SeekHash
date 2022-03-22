@@ -14,38 +14,34 @@
         <link rel= "stylesheet" href="styles/home_template.css" type="text/css"/> 
     </head>
     <body>
-    <nav class="navbar">
-    
-    <ul>
+        <?php include("index_template.php"); ?>
+    <nav class="navbar navBar2">
+        <ul>
+            <li>
+                <a href="#home" class="dot active" data-scroll="home">
+                <span>home</span>
+                </a>
+            </li>
 
-    <li>
-        <a href="#home" class="dot active" data-scroll="home">
-        <span>home</span>
-        </a>
-    </li>
+            <li>
+                <a href="#about" class="dot" data-scroll="about">
+                <span>about</span>
+                </a>
+            </li>
 
-    <li>
-        <a href="#about" class="dot" data-scroll="about">
-        <span>about</span>
-        </a>
-    </li>
+            <li>
+                <a href="#how_it_work" class="dot" data-scroll="how_it_work">
+                <span>how_it_work</span>
+                </a>
+            </li>
 
-    <li>
-        <a href="#how_it_work" class="dot" data-scroll="how_it_work">
-        <span>how_it_work</span>
-        </a>
-    </li>
-
-    <li>
-        <a href="#subscription" class="dot" data-scroll="subscription">
-        <span>subscription</span>
-        </a>
-    </li>
-
-    </ul>
-
+            <li>
+                <a href="#subscription" class="dot" data-scroll="subscription">
+                <span>subscription</span>
+                </a>
+            </li>
+        </ul>
     </nav>
-
     <section class="sec" id="home">
         <div class="row">
             <div class="col text-center">

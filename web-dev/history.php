@@ -13,6 +13,7 @@
         <link rel= "stylesheet" href="styles/home_template.css" type="text/css"/> 
     </head>
     <body>
+    <?php include("index_template.php"); ?>
         <section class="history">
             <div class="row row1">
                 <div class="col-12"><h4>History</h4></div>

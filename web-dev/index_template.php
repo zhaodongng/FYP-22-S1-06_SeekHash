@@ -2,15 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <title>SeekHash</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <link rel= "stylesheet" href="styles/index_template.css" type="text/css"/> 
     </head>
     <body>
@@ -21,12 +13,12 @@
                         <h1 class="d-inline p-0">Seek</h1>
                         <h1 class="d-inline p-0 fw-bold hash"><b>#</b></h1>
                     </div>
-                    <div class="col-10 d-flex justify-content-end nav">
-                        <nav class="mt-3">
+                    <div class="col-10 d-flex justify-content-end nav1">
+                    <nav class="mt-3">
                             <ul class ="nav__links">
-                                <li><a href="#">Home</a></li>
+                                <li><a href="home.php">Home</a></li>
                                 <li><a href="#">Report</a></li>
-                                <li><a href="#">History</a></li>
+                                <li><a href="history.php">History</a></li>
                                 <li><a href="#">Program</a></li>
                                 <li><a href="#">Subscriptions</a></li>
                             </ul>

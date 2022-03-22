@@ -13,50 +13,53 @@
     overflow-x: hidden;
   }
   
-  .sec{
+  #home,#how_it_work{
     min-height: 90vh;
-    
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3em;
-    color:#fff;
     background: #AD8BF7;
     background-image: url("../img/background2.png");
     letter-spacing: 2px;
   }
   
-  .sec:nth-child(odd){
+  #about,#subscription{
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
     background: #2C1A55;
     background-image: url("../img/background1.png");
     background-size: cover;
   }
   
-  .navbar{
+  .navBar2{
     position: fixed;
     top:50%; right:40px;
     transform: translateY(-50%);
     z-index: 1000;
   }
   
-  .navbar ul{
+  .navBar2 ul{
     list-style: none;
     padding:0; margin: 0;
   }
   
-  .navbar ul li{
+  .navBar2 ul li{
     width: 200px;
     position: relative;
     text-align: right;
   }
   
-  .navbar ul li .dot{
+  .navBar2 ul li .dot{
     color:#AD8BF7;
     display: block;
     padding:5px 0;
   }
   
-  .navbar ul li .dot span{
+  .navBar2 ul li .dot span{
     display: inline-block;
     background: #fff;/*box*/
     letter-spacing: 1px;
@@ -67,12 +70,12 @@
     opacity: 0;
   }
   
-  .navbar ul li:hover .dot span{
+  .navBar2 ul li:hover .dot span{
     transform: translateX(0px);
     opacity: 1;
   }
   
-  .navbar ul li .dot span::before{
+  .navBar2 ul li .dot span::before{
     content: '';
     position: absolute;
     top:50%; right:0;
@@ -83,8 +86,8 @@
     display: block;
   }
   
-  .navbar ul li .dot::before,
-  .navbar ul li .dot::after{
+  .navBar2 ul li .dot::before,
+  .navBar2 ul li .dot::after{
     content: '';
     position: absolute;
     top:50%;
@@ -93,7 +96,7 @@
     transition: .2s ease-out;
   }
   
-  .navbar ul li .dot::before{
+  .navBar2 ul li .dot::before{
     height:5px;
     width: 5px;
     border: 2px solid rgb(255, 255, 255);
@@ -101,13 +104,13 @@
     transform: translateY(-50%);
   }
   
-  .navbar ul li .dot.active::before,
-  .navbar ul li:hover .dot::before{
+  .navBar2 ul li .dot.active::before,
+  .navBar2 ul li:hover .dot::before{
     border-color: #fff;
     background: #fff;
   }
   
-  .navbar ul li .dot::after{
+  .navBar2 ul li .dot::after{
     height:15px;
     width: 15px;
     border: 2px solid #fff;
@@ -115,8 +118,8 @@
     transform: translateY(-50%) scale(0);
   }
   
-  .navbar ul li .dot.active::after,
-  .navbar ul li:hover .dot::after{
+  .navBar2 ul li .dot.active::after,
+  .navBar2 ul li:hover .dot::after{
     transform: translateY(-50%) scale(1);
   }
 
