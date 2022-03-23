@@ -10,13 +10,17 @@
     </head>
     <body>
 		<?php
-            echo "<p>Source code processing ... </p>";
+            //echo "<p>Source code processing ... </p>";
 
             // Retrieve the uploaded source code file.
-            $sourceCodeFile = $_POST["sourcecode"];
+            $sourceCodeFile = $_FILES['sourcecode']['name'];
+            //echo $sourceCodeFile;
 
+            // Execute the SeekHash python program.
             $output = shell_exec("/usr/local/bin/python3.8 seekhash_v3.py $sourceCodeFile 2>&1");
-            echo $output;
+            //echo $output;
+
+            include "report_page.php";
         ?>
     </body>
 </html>
