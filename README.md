@@ -4,6 +4,6 @@ Final Year Project GitHub repo
 
 # Web-dev
 
-Wireframe website link: https://zhaodongng.wixsite.com/seekhash
+Wireframe website link: https://projectseekhash.wixsite.com/seekhash
 
 Index_template.php and index_template.css includes the header and footer for SeekHash website.
