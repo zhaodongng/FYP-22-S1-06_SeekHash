@@ -193,7 +193,7 @@
   .history{
     min-height: 100vh;
     justify-content: center;
-    background-image: url("../img/background1.png");
+    background-image: url("../img/background2.png");
     background-size: cover;
   }
 
@@ -255,4 +255,29 @@
     position: fixed;
     margin-left: 29rem;
     margin-top: 5.6rem;
+  }
+
+  #myModal{
+    padding-top: 5rem;
+  }
+
+  .modal-content{
+    background-color: #AD8BF7;
+    color: aliceblue;
+  }
+
+  .hr1{
+    color: #2C1A55;
+  }
+  .mbtns{
+    color: aliceblue;
+    background-color: #2C1A55;
+    padding: 0.4rem 1rem;
+    border-radius: 0.9rem;
+    border: none;
+  }
+
+  .mbtns:hover{
+    color: #2C1A55;
+    background-color: aliceblue;
   }

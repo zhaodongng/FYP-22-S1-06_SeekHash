@@ -1,91 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-* {
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
+.program{
+    min-height: 100vh;
+    justify-content: center;
+    background-image: url("../img/background1.png");
+    background-size: cover;
 }
-
-/*Edit Style in all of HEADER which is the Navigation Bar */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/*logo*/
-.logo{
-    background-color: #F2F7FF;
-}
-
-.logo h1{
-    background-color: #F2F7FF;
-}
-
-.logo .hash{
-    color: #854DFF;
-}
-
-.logo .hash b{
-    background-color: #F2F7FF;
-}
-
-/*nav bar*/
-.nav{
-    background-color: #061551;
-}
-
-.nav nav{
-    background-color: #061551;
-}
-
-/*Edit Style in class nav_links which is the Navigation Bar */
-li,a {
-    font-weight: 400;
-    font-size: 16px;
-    text-decoration: none;
-}
-.nav__links{
-    list-style: none;
-    background-color: #061551;
-}
-.nav__links :hover {
-    color: #854DFF;
-}
-.nav__links li {
-    background-color: #061551;
-    display: inline-block;
-    padding: 0px 10px;
-    color: #F2F7FF;
-}
-
-.nav__links li a{
-    color: #F2F7FF;
-}
-
-/*logIn button*/
-.logInBtn{
-    background-color: #061551;
-    color: #854DFF;
-    border: none;
-}
-
-/*footer*/
-.fixed__footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color:#854DFF;
-    font-size: 14px;
-    text-align: center;
-}
-
 /* Program page stylesheet*/
-.programbox {
-    background-color: #061551;
-    padding: 40px 40px 400px 40px;
-}
 
 .programbox h2 {
     color: #854DFF;
@@ -135,3 +54,28 @@ li,a {
     font-weight: 700;
     margin-top: 20px;
 }
+
+#myModal{
+    padding-top: 5rem;
+  }
+
+  .modal-content{
+    background-color: #AD8BF7;
+    color: aliceblue;
+  }
+
+  .hr1{
+    color: #2C1A55;
+  }
+  .mbtns{
+    color: aliceblue;
+    background-color: #2C1A55;
+    padding: 0.4rem 1rem;
+    border-radius: 0.9rem;
+    border: none;
+  }
+
+  .mbtns:hover{
+    color: #2C1A55;
+    background-color: aliceblue;
+  }
