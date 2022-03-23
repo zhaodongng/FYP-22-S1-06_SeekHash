@@ -20,16 +20,13 @@
                                 <li><a href="#">Report</a></li>
                                 <li><a href="history.php">History</a></li>
                                 <li><a href="#">Program</a></li>
+                                <li><a href="login_page.php" button type="button" href="login_page.php" class="logInBtn">
+                                    <svg style="color: #F2F7FF;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                    </svg>&nbsp; Log In
                             </ul>
-                        </nav>
-                        <button type="button" class="logInBtn">
-                            <svg style="color: #F2F7FF;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                            </svg>
-                            &nbsp;
-                            Log In
-                        </button>
+                    </nav> 
                     </div>
                 </div>
             </div>
