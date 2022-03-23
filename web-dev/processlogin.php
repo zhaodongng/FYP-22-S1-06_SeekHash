@@ -1,53 +1,56 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>SeekHash</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel= "stylesheet" href="styles/index_template.css" type="text/css"/> 
-    </head>
-    <body>
-		<?php
-            // connect to sql databases
-			$servername = "localhost";
-            $username = "root";
-            $password = "root";
-            $dbname = "seekhash_db";
-    
-            try{
-                $conn = mysqli_connect($servername, $username, $password, $dbname);
-                echo "<p>Connection to seekhash_db successful</p>\n";
-            }
-            catch (mysqli_sql_exception $e)
-            {
-                die("Connection to seekhash_db failed: " . mysqli_connect_errno() . " - " . 
-                    mysqli_connect_error());
-            }
+<?php
 
-            $sql = "SELECT * FROM seekhash_db.user_info WHERE password = '{$_POST["login_password"]}'";
+    $login_user = $_POST["login_username"];
+    $login_pass = $_POST["login_password"];
 
-            try{
-                $conn = mysqli_query($conn, $sql);
-                echo "Select from seekhash_db.user_info successfully";
-                $users = array();
-                while ($row = mysqli_fetch_assoc($conn)) {
-                    $users[] = $row;
+    function verify_username($login_user){
+        $verify = false;
+        if (!empty($login_user)){ $verify = true; }
+        else { $verify = false; }
+        if ($verify == true){
+            $conn = mysqli_connect("localhost", "root", "", "seekhash_db");
+            if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
+            $sql = "SELECT * FROM seekhash_db.user_info WHERE name = '$login_user'";
+            $result = $conn->query($sql);
+            if ($result->num_rows == 0){
+                echo "Invalid username";
+                $verify = false; }
+        }
+        mysqli_close($conn);
+        return $verify;
+    }
+
+    function verify_access($login_user, $login_pass){
+        $verify = false;
+        if (!empty($login_pass)){ $verify = true; }
+        else { $verify = false; }
+        if ($verify == true){
+            $conn = mysqli_connect("localhost", "root", "", "seekhash_db");
+            if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
+            $sql = "SELECT name, password FROM seekhash_db.user_info WHERE name = '$login_user'";
+            $result = $conn->query($sql);
+            if ($result->num_rows == 0){
+                echo "Invalid username or password";
+                $verify = false; }
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    if ($login_user = $row["name"] and $login_pass = $row["password"]){
+                        echo $login_user;
+                        echo $login_pass;
+                        $verify = true;
+                    } else { $verify = false; }
                 }
-                echo "<pre>";
-                print_r($users);
-                echo "</pre>";
             }
-            catch (mysqli_sql_exception $e)
-            {
-                die("Select from seekhash_db.user_info failed: " . mysqli_connect_errno() . " - " . 
-                    mysqli_connect_error());
-            }
+        }
+        mysqli_close($conn);
+        return $verify;
+    }
 
-            include "home.html";
-
-            mysqli_close($conn);
-		?>
-    </body>
-</html>
+    $verify = verify_username($login_user);
+    if ($verify == 1){
+        $verify = verify_access($login_user, $login_pass);
+        echo "im in";
+        #include "home.php";
+    } else {
+        echo "Invalid username or password";
+    }
