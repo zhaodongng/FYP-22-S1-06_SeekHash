@@ -6,11 +6,11 @@
         <title>SeekHash</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel= "stylesheet" href="styles/program_page.css" type="text/css"/> 
+        <link rel= "stylesheet" href="styles/report_page.css" type="text/css"/> 
     </head>
     <body>
 		<?php
-            //echo "<p>Source code processing ... </p>";
+            //echo "<h1>Source code processing ... </h1>";
 
             // Retrieve the uploaded source code file.
             $sourceCodeFile = $_FILES['sourcecode']['name'];
@@ -21,6 +21,7 @@
             //echo $output;
 
             include "report_page.php";
+            
         ?>
     </body>
 </html>

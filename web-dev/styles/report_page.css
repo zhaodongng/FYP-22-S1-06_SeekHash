@@ -103,6 +103,15 @@ li,a {
     padding-bottom: 40px;
 }
 
+.reportbox h2 {
+    color: #061551;
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
 .reportbox button {
     background-color: #061551;
     color: #F2F7FF;

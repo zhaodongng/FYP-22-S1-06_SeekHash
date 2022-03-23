@@ -47,6 +47,19 @@
         <div class="reportbackground">
             <div class="reportbox">
                 <h1>Analysis</h1>
+                <h2>
+                    <?php
+                        $reportFile = fopen("report.txt", "r") or die("Unable to open file!");
+                        //$reportContents = fread($reportFile, filesize("report.txt"));
+                        //echo "<p>$reportContents</p>";
+
+                        while(!feof($reportFile)) {
+                            echo fgets($reportFile) . "<br>";
+                        }
+
+                        fclose($reportFile);
+                    ?>
+                </h2>
                 <button>Download</button>
             </div>
         </div>
