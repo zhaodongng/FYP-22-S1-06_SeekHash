@@ -50,6 +50,7 @@
                     <h2><b>Upload Hash Code</b></h2>
                     <input type="text" name="hashcode" onfocus="this.value = ''" value="Type your hash output"/>&nbsp;&nbsp;
                     <input type="submit" />
+                    <span id="verifyhashresult" class="errorMessage"></span>
                 </div>
             </form>
 

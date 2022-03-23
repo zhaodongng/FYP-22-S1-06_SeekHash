@@ -119,6 +119,10 @@ li,a {
     color: #854DFF;
 }
 
+.uploadhashbox span {
+    color: #64D2B5;
+}
+
 .uploadsourcecodebox {
     margin-left: 250px;
 }
