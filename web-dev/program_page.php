@@ -55,10 +55,10 @@
 
             <hr />
 
-            <form action="processsourcecode.php" method="post">
+            <form action="processsourcecode.php" method="post" enctype="multipart/form-data">
                 <div class="uploadsourcecodebox">
                     <h2><b>Upload Your Source Code</b></h2>
-                    <input type="file" name="sourcecode"/><br />
+                    <input type="file" name="sourcecode" id="sourcecode"/><br />
                     <input type="submit" value="UPLOAD SOURCE CODE"/>
                 </div>
             </form>

@@ -12,7 +12,10 @@
 		<?php
             echo "<p>Source code processing ... </p>";
 
-            $output = shell_exec("/usr/local/bin/python3.8 seekhash_v2.py sourceCode.txt 2>&1 &");
+            // Retrieve the uploaded source code file.
+            $sourceCodeFile = $_POST["sourcecode"];
+
+            $output = shell_exec("/usr/local/bin/python3.8 seekhash_v3.py $sourceCodeFile 2>&1");
             echo $output;
         ?>
     </body>
