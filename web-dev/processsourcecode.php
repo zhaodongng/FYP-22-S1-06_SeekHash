@@ -12,8 +12,7 @@
 		<?php
             echo "<p>Source code processing ... </p>";
 
-            $command = escapeshellcmd("/usr/local/bin/python3 python_exec_test.py");
-            $output = shell_exec($command);
+            $output = shell_exec("/usr/local/bin/python3.8 seekhash_v2.py sourceCode.txt 2>&1 &");
             echo $output;
         ?>
     </body>
