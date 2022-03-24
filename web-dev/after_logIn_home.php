@@ -14,7 +14,7 @@
         <link rel= "stylesheet" href="styles/home_template.css" type="text/css"/> 
     </head>
     <body>
-        <?php include("index_after_logIn.php"); ?>
+        <?php include("after_logIn_index.php"); ?>
     <nav class="navbar navBar2">
         <ul>
             <li>

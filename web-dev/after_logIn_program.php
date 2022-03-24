@@ -13,7 +13,7 @@
         <link rel= "stylesheet" href="styles/program_page.css" type="text/css"/> 
     </head>
     <body>
-        <?php include("index_template.php") ?>
+        <?php include("after_logIn_index.php") ?>
         <!-- Program Page Contents -->
         <section class="program">
             <div class="programbox">
@@ -31,8 +31,8 @@
             <form action="processsourcecode.php" method="post" enctype="multipart/form-data">
                 <div class="uploadsourcecodebox">
                     <h2 class ="pb-1" style="color:aliceblue;"><b>Upload Your Source Code</b></h2>
-                    <input type="file" name="sourcecode" id="sourcecode"/><br />
-                    <input type="submit" value="UPLOAD SOURCE CODE"/>
+                    <input type="file" name="sourcecode" class="fileUpload" id="sourcecode"/><br />
+                    <input type="submit" class="analyseBtn" onClick="location.href='report_page.php'" value="Click to analyse the source code"/>
                 </div>
             </form>
         </div>

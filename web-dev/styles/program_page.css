@@ -46,13 +46,28 @@
     margin-left: 250px;
 }
 
-.uploadsourcecodebox input {
+.uploadsourcecodebox .fileUpload {
     background-color: #F2F7FF;
     color: #000;
     border-radius: 5px;
     padding: 15px;
     font-weight: 700;
     margin-top: 20px;
+}
+
+.analyseBtn{
+      font-size: 1rem;
+      color: aliceblue;
+      background-color: #854DFF;
+      padding: 0.6rem 2rem;
+      margin-top: 0.6rem;
+      border: none;
+      border-radius: 1rem;
+    }
+
+.analyseBtn:hover{
+    background-color: aliceblue;
+    color:#854DFF;
 }
 
 #myModal{
@@ -79,3 +94,5 @@
     color: #2C1A55;
     background-color: aliceblue;
   }
+
+  

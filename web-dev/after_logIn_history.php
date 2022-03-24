@@ -14,7 +14,7 @@
         
     </head>
     <body>
-    <?php include("index_after_logIn.php"); ?>
+    <?php include("after_logIn_index.php"); ?>
         <section class="history">
             <div class="row row1">
                 <div class="col-12"><h4>History</h4></div>

@@ -17,7 +17,6 @@
                     <nav class="mt-3">
                             <ul class ="nav__links">
                                 <li><a href="home.php">Home</a></li>
-                                <li><a href="report_page.php">Report</a></li>
                                 <li><a href="history.php">History</a></li>
                                 <li><a href="program_page.php">Program</a></li>
                                 <li><button type="button" onclick="location.href='login_page.php';" class="logInBtn">
