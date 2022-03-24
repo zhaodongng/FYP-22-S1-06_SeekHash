@@ -16,7 +16,7 @@
             $output = shell_exec("/usr/local/bin/python3.8 VerifyHash.py $hashCode 2>&1");
             echo $output;
 
-            include "program_page.php";
+            include "after_logIn_program.php";
             
         ?>
     </body>
