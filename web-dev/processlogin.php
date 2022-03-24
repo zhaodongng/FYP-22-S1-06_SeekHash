@@ -50,7 +50,7 @@
     if ($verify == 1){
         $verify = verify_access($login_user, $login_pass);
         echo "im in";
-        include "home_after_logIn.php";
+        include "after_logIn_home.php";
     } else {
         echo "Invalid username or password";
     }
