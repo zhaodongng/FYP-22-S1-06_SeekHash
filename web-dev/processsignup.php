@@ -10,7 +10,7 @@
         if (!empty($signup_user)){ $verify = true; }
         else { $verify = false; }
         if ($verify == true){
-            $conn = mysqli_connect("localhost", "root", "", "seekhash_db");
+            $conn = mysqli_connect("localhost", "root", "root", "seekhash_db");
             if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
             $sql = "SELECT * FROM seekhash_db.user_info WHERE name = '$signup_user'";
             $result = $conn->query($sql);
@@ -40,7 +40,7 @@
         if (filter_var($signup_email, FILTER_VALIDATE_EMAIL)) { $verify = true; }
         else { echo "invalid email"; }
         if ($verify = true) {
-            $conn = mysqli_connect("localhost", "root", "", "seekhash_db");
+            $conn = mysqli_connect("localhost", "root", "root", "seekhash_db");
             if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
             $sql = "SELECT * FROM seekhash_db.user_info WHERE email = '$signup_email'";
             $result = $conn->query($sql);
@@ -53,7 +53,7 @@
     }
 
     function addUser($signup_user, $signup_pass, $signup_email){
-        $conn = mysqli_connect("localhost", "root", "", "seekhash_db");
+        $conn = mysqli_connect("localhost", "root", "root", "seekhash_db");
         if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
         $sql = "INSERT INTO seekhash_db.user_info(name, password, email) VALUES ('$signup_user', '$signup_pass', '$signup_email')";
         if($conn->query($sql)){
@@ -73,4 +73,4 @@
         }
     }
     include 'home.php';
-    #header(location:"home.php"); 
+    #header(location:"home.php");

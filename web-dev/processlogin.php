@@ -8,7 +8,7 @@
         if (!empty($login_user)){ $verify = true; }
         else { $verify = false; }
         if ($verify == true){
-            $conn = mysqli_connect("localhost", "root", "", "seekhash_db");
+            $conn = mysqli_connect("localhost", "root", "root", "seekhash_db");
             if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
             $sql = "SELECT * FROM seekhash_db.user_info WHERE name = '$login_user'";
             $result = $conn->query($sql);
@@ -25,7 +25,7 @@
         if (!empty($login_pass)){ $verify = true; }
         else { $verify = false; }
         if ($verify == true){
-            $conn = mysqli_connect("localhost", "root", "", "seekhash_db");
+            $conn = mysqli_connect("localhost", "root", "root", "seekhash_db");
             if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
             $sql = "SELECT name, password FROM seekhash_db.user_info WHERE name = '$login_user'";
             $result = $conn->query($sql);
@@ -50,7 +50,7 @@
     if ($verify == 1){
         $verify = verify_access($login_user, $login_pass);
         echo "im in";
-        #include "home.php";
+        include "home.php";
     } else {
         echo "Invalid username or password";
     }
