@@ -17,8 +17,8 @@
                     <nav class="mt-3">
                             <ul class ="nav__links">
                                 <li><a href="after_logIn_home.php">Home</a></li>
+                                 <li><a href="after_logIn_program.php">Program</a></li>
                                 <li><a href="after_logIn_history.php">History</a></li>
-                                <li><a href="after_logIn_program.php">Program</a></li>
                                 <li><button type="button" onclick="location.href='home.php';" class="logInBtn">
                                 <svg style="color: #F2F7FF;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>

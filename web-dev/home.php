@@ -52,27 +52,25 @@
     </section>
     <section class="sec" id="about">
         <div class="row">
-            <div class="col-4 p-4 text-center">
+            <div class="col-6 p-4 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#AD8BF7" class="bi bi-book" viewBox="0 0 16 16">
                     <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
                 </svg>
                 <h5>Our Story</h5>
-                <p class="text-justify">I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</p>
+                <p class="text-justify">Our team will develop and implement a site for users to upload blockchain program codes as well as hashes with the objective of detecting the hash function within blockchain source codes. The program will analyze your codes and detect any hash functions. A summary report of the hash function will be displayed for the user which includes the type of hash detected and its strength. </p>
             </div>
-            <div class="col-4 p-4 text-center">
+            <div class="col-6 p-4 text-center">
                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height="60" width="60" viewBox="0 0 215 215">
                     <defs><style>.cls-1{fill:#AD8BF7;stroke:#AD8BF7;stroke-miterlimit:10;}</style></defs>
                     <path class="cls-1" d="M107.5.5a107,107,0,1,0,107,107A107,107,0,0,0,107.5.5Zm0,193.75a86.75,86.75,0,1,1,86.75-86.75A86.75,86.75,0,0,1,107.5,194.25Z"/>
                 </svg>
                 <h5>Our Vision</h5>
-                <p class="text-justify">I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</p>
-            </div>
-            <div class="col-4 p-4 text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#AD8BF7" class="bi bi-plus-lg" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
-                  </svg>
-                <h5>Technology</h5>
-                <p class="text-justify">I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</p>
+                <ul class="text-justify">
+                    <li>Create and design a user-friendly web site for users to utilise the program, functionalities as well as navigation of the site. </li>
+                    <li>Develop a program to read in and analyse the source code that was uploaded by the user and detect for any hash function within the code.</li>
+                    <li>Develop the program to be able to read the 5-programming languages, namely, “Solidity”, “Python”, “C++”, “Java” and “Go”.</li>
+                    <li>Create a function to generate a report for the users regarding the hash function that was detected in the source codes that was uploaded.</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -82,15 +80,18 @@
             <div class="col-12"><h4 class="text-center">How it works</h4></div>
             <div class="col-6"></div>
             <div class="col-6 p-5">
-                <h5>Smart</h5>
+                <h5 class="text-center">Steps to use the website</h5>
                 <p>
-                    I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.
+                    Step 1: Click the program webpage to upload the source code or hash output you want to verify.
+                    <br/>Step 2: Your summary report is out now!
                 </p>
             </div>
             <div class="col-6 p-5">
-                <h5>Fast</h5>
+                <h5 class="text-center">Sign up to enjoy more features</h5>
                 <p class="p-1">
-                    I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.
+                1. You can view the history of the source code as well as the report you have uploaded to our website.
+                <br/>2. You can search the report by using the report id.
+                <br/>3. You can delete and download the source code and report to view it on your own devices.
                 </p>
             </div>
             <div class="col-6"></div>

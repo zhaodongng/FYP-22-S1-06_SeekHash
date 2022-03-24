@@ -7,36 +7,33 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <title>SeekHash - Program Page</title>
+        <title>SeekHash - Report Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel= "stylesheet" href="styles/program_page.css" type="text/css"/> 
+        <link rel= "stylesheet" href="styles/report_page.css" type="text/css"/> 
     </head>
     <body>
-        <?php include("after_logIn_index.php") ?>
-        <!-- Program Page Contents -->
-        <section class="program">
-            <div class="programbox">
-            <form action="processhash.php" method="post">
-                <div class="uploadhashbox">
-                    <h2 style="color:aliceblue;"><b>Upload Hash Code</b></h2>
-                    <input type="text" name="hashcode" onfocus="this.value = ''" value="Type your hash output"/>&nbsp;&nbsp;
-                    <input type="submit" />
-                    <span id="verifyhashresult" class="errorMessage"></span>
-                </div>
-            </form>
+        <?php include("after_logIn_index.php");?>
+        <!-- Report Page Contents -->
+        <div class="reportbackground">
+            <div class="reportbox">
+                <h1>Analysis</h1>
+                <h2>
+                    <?php
+                        $reportFile = fopen("report.txt", "r") or die("Unable to open file!");
+                        //$reportContents = fread($reportFile, filesize("report.txt"));
+                        //echo "<p>$reportContents</p>";
 
-            <hr />
+                        while(!feof($reportFile)) {
+                            echo fgets($reportFile) . "<br>";
+                        }
 
-            <form action="processsourcecode.php" method="post" enctype="multipart/form-data">
-                <div class="uploadsourcecodebox">
-                    <h2 class ="pb-1" style="color:aliceblue;"><b>Upload Your Source Code</b></h2>
-                    <input type="file" name="sourcecode" class="fileUpload" id="sourcecode"/><br />
-                    <input type="submit" class="analyseBtn" onClick="location.href='after_logIn_report.php'" value="Click to analyse the source code"/>
-                </div>
-            </form>
+                        fclose($reportFile);
+                    ?>
+                </h2>
+                <button>Download</button>
+            </div>
         </div>
-        </section>
         
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

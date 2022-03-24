@@ -13,7 +13,7 @@
         <link rel= "stylesheet" href="styles/report_page.css" type="text/css"/> 
     </head>
     <body>
-        <?php include("after_logIn_index.php");?>
+        <?php include("index_template.php");?>
         <!-- Report Page Contents -->
         <div class="reportbackground">
             <div class="reportbox">
