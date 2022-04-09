@@ -9,16 +9,13 @@
         <link rel= "stylesheet" href="styles/report_page.css" type="text/css"/> 
     </head>
     <body>
-		<?php
-            //echo "<h1>Source code processing ... </h1>";
-
+        <?php
             // Retrieve the uploaded source code file.
             $sourceCodeFile = $_FILES['sourcecode']['name'];
-            //echo $sourceCodeFile;
 
             // Execute the SeekHash python program.
-            $output = shell_exec("/usr/local/bin/python3.8 seekhash_v3.1.py $sourceCodeFile 2>&1");
-            //echo $output;
+            $output = shell_exec("/usr/local/bin/python3.8 seekhash_v3.2.py $sourceCodeFile 2>&1");
+            echo $output;
 
             include "report_page.php";
             
