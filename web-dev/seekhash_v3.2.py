@@ -160,7 +160,7 @@ def find_HashFunction(script, hashes):
             for num, line in enumerate(SrcFile, 1):
                 line = line.lower() #No need lower?
                 if lookup in line:
-                    display = f'{lookup} found at line: {num}\n'
+                    display = f'{lookup}:{num},'
                     #print(display)
                     output += display
     return output
@@ -204,7 +204,7 @@ def compute_strength(hashLength):
 def platform(lang):
 
     platforms = []
-    output = " "
+    output = ""
 
     if lang == "Python":
         platforms = ["Ethereum", 
@@ -242,7 +242,7 @@ def platform(lang):
                 output += platforms[-1]
             else:
                 output += platform
-                output += ", "
+                output += ","
     return output
 
 def main():
@@ -261,8 +261,7 @@ def main():
     hashLengthDict = {}
     outputTxt = ""
 
-    outputTxt += "\n"
-    outputTxt += "The file read in is " + script + ";\n\n"
+    outputTxt += script + ";"
     
     #-2- Check if script is ".txt", otherwise check what language is it
     # If True, its .txt extension, if False, check script extension.
@@ -277,20 +276,21 @@ def main():
     else:    
         first_prob = str(round(prob[0][1],3))
         
-    outputTxt += "The programming language detected is " + language + ";\n\n"
+    outputTxt += language + ";"
     output = platform(language)
-    outputTxt += f"The platforms using this language are: {output};\n\n"
-    outputTxt += "The programming language probabilities is " + first_prob +";\n\n"
+    outputTxt += f"{output};"
+    outputTxt += first_prob +";"
     
     #-3- Getting the hash functions from hash library based on the programming language
     hashes = hash_library(language)
     
     #-4- Single out the hash functions within the script
     hashesFound = find_HashFunction(script, hashes)
+    hashesFound = hashesFound[:-1]
+    hashesFound += ";"
 
     #print(hashesFound)
     outputTxt += hashesFound
-    outputTxt += "\n"
     
     #-5- Find the hash length and output the hash strength
     hashLengthDict = hash_length(language)
@@ -299,15 +299,16 @@ def main():
         for Dict_key in hashLengthDict.keys():
             if Dict_key in hash_found and Dict_key not in found_array:
                 found_array.append(Dict_key)
-                outputTxt += "Hash function detected: {}, the hash length of the hashes is : {}bits;\n".format(Dict_key.upper(), hashLengthDict[Dict_key])
-                
+                outputTxt += "{}-{}bits-".format(Dict_key.upper(), hashLengthDict[Dict_key])
+              
                 for past in past_Attacks:
-                    if hash_found == past:
-                        outputTxt += f"Known past attacks on {hash_found.upper()} detected, {past_Attacks[hash_found]};\n"
-                        past_attacks_done.append(hash_found)
+                    if Dict_key.lower() == past:
+                        outputTxt += past_Attacks[Dict_key.lower()]
+                        past_attacks_done.append(Dict_key.lower())
+
+                outputTxt += ";"
                         
     #print("Output file is stored in report.txt")
-
 
     #-6- Output the report to user (using print())
     print(outputTxt)
