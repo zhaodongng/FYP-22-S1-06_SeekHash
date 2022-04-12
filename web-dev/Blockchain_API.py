@@ -47,12 +47,12 @@ if __name__ == "__main__":
     
     if Crypto == "BTC": 
         if options   == "-b" and len(hash) == 64: crypto_url = "btc/main/blocks/"
-        elif options == "-t" and len(hash) == 34: crypto_url = "btc/main/txs/"
+        elif options == "-t" and len(hash) == 64: crypto_url = "btc/main/txs/"
         elif options == "-a" and len(hash) == 34: crypto_url = "btc/main/addrs/"
             
     elif Crypto == "ETH":
         if options   == "-b" and len(hash) == 66: crypto_url = "eth/main/blocks/"
-        elif options == "-t" and len(hash) == 36: crypto_url = "eth/main/txs/"
+        elif options == "-t" and len(hash) == 66: crypto_url = "eth/main/txs/"
         elif options == "-a" and len(hash) == 42: crypto_url = "eth/main/addrs/"
         hash = hash[2:]
     else:
