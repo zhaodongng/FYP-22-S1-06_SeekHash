@@ -5,6 +5,7 @@ guess = Guess()
 
 #-- Hash library function 
 def hash_library(lang):
+    hashes = []
 
     #--1--: Python
     ## Hashes are retrieved from Python Hashlib package
