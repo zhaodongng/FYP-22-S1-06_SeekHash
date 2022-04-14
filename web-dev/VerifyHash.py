@@ -32,17 +32,25 @@ def obtain_hash_type(check_hash):
 
 
 def enumerate_hash_types(items, nb_likeliest=3):
+    output = ""
     print("{} possible hash types found..".format(len(items)))
     for count, item in enumerate(items, start=1):
         if count <= nb_likeliest:
-            print("Most likely possible hash type: {}".format(item))
+            output += f"Most likely possible hash type: {item}\n"
             if count == nb_likeliest:
-                print("")
+                print("\n\n")
         else:
-            print("Least likely possible hash type: {}".format(item))
+            output += f"Least likely possible hash type: {item}\n"
+    with open("hash_report.txt", 'w') as file:
+        file.write(str(output))
+        print("Written to file!")
+        file.close()
 
 
 if __name__ == '__main__':
     check_hash = sys.argv[1]
     print("Analyzing hash: {}".format(check_hash))
     obtain_hash_type(check_hash)
+
+        
+        
