@@ -53,7 +53,7 @@ header {
     background-color: #061551;
     display: inline-block;
     padding: 0px 10px;
-    color: #F2F7FF;
+    color: #854DFF;
 }
 
 .nav__links li a{
@@ -61,9 +61,9 @@ header {
 }
 
 /*logIn button*/
-.logInBtn{
+.dropdownBtn{
     background-color: #061551;
-    color: #854DFF;
+    color: #F2F7FF;
     border: none;
 }
 
@@ -77,3 +77,28 @@ header {
     font-size: 14px;
     text-align: center;
 }
+
+ul li ul {
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+  }
+
+  ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+   visibility: visible;
+   opacity: 1;
+   display: block;
+}
+
+ul li ul li {
+    width: 100%;
+    margin-right: 27em;
+  }

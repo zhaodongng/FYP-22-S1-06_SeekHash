@@ -1,4 +1,4 @@
-  *{
+*{
     margin: 0; padding: 0;
     box-sizing: border-box;
     transition: all .2s linear;
@@ -35,93 +35,7 @@
     background-size: cover;
   }
   
-  .navBar2{
-    position: fixed;
-    top:50%; right:40px;
-    transform: translateY(-50%);
-    z-index: 1000;
-  }
-  
-  .navBar2 ul{
-    list-style: none;
-    padding:0; margin: 0;
-  }
-  
-  .navBar2 ul li{
-    width: 200px;
-    position: relative;
-    text-align: right;
-  }
-  
-  .navBar2 ul li .dot{
-    color:#AD8BF7;
-    display: block;
-    padding:5px 0;
-  }
-  
-  .navBar2 ul li .dot span{
-    display: inline-block;
-    background: #fff;/*box*/
-    letter-spacing: 1px;
-    padding:10px 25px;
-    margin-right: 30px;
-    border-radius: 3px;
-    transform: translateX(30px);
-    opacity: 0;
-  }
-  
-  .navBar2 ul li:hover .dot span{
-    transform: translateX(0px);
-    opacity: 1;
-  }
-  
-  .navBar2 ul li .dot span::before{
-    content: '';
-    position: absolute;
-    top:50%; right:0;
-    transform: translate(7px, -50%);
-    border-left: 7px solid #fff; /*arrow*/
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    display: block;
-  }
-  
-  .navBar2 ul li .dot::before,
-  .navBar2 ul li .dot::after{
-    content: '';
-    position: absolute;
-    top:50%;
-    border-radius: 50%;
-    display: block;
-    transition: .2s ease-out;
-  }
-  
-  .navBar2 ul li .dot::before{
-    height:5px;
-    width: 5px;
-    border: 2px solid rgb(255, 255, 255);
-    right:0;
-    transform: translateY(-50%);
-  }
-  
-  .navBar2 ul li .dot.active::before,
-  .navBar2 ul li:hover .dot::before{
-    border-color: #fff;
-    background: #fff;
-  }
-  
-  .navBar2 ul li .dot::after{
-    height:15px;
-    width: 15px;
-    border: 2px solid #fff;
-    right:-5px;
-    transform: translateY(-50%) scale(0);
-  }
-  
-  .navBar2 ul li .dot.active::after,
-  .navBar2 ul li:hover .dot::after{
-    transform: translateY(-50%) scale(1);
-  }
+ 
 
   /*sign_up*/
   #home h1{
