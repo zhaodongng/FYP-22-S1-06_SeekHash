@@ -21,17 +21,20 @@
                                 <li><a href="program_page.php">Program</a></li>
                                 <li><a href="about_us.php">About Us</a></li>
                                 <li><a href="history.php">History</a></li>
-                                <li>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#F2F7FF" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                                    </svg>
-                                    <a href="#" aria-haspopup="true"><?php echo $_SESSION['name'];?></a>
-                                    <ul class="dropdownBtn text-end" aria-label="submenu">
-                                        <li class="text-right"><a href="#">Account Details</a></li>
-                                        <li class="text-right"><a href="logOut.php">LogOut</a></li>
-                                    </ul>
-                                
+                                <li><div class="dropdown">
+                                        <button class="btn dropdownBtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#F2F7FF" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                            </svg>
+                                            <?php echo $_SESSION['name'];?>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Profile</a>
+                                            <a class="dropdown-item" href="LogOut.php">Log Out</a>
+                                        </div>
+                                    </div>
+                                </li>
                             </ul>
                         </nav>
                     </div>

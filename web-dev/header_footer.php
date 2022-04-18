@@ -20,7 +20,7 @@
                                 <li><a href="program_page.php">Program</a></li>
                                 <li><a href="about_us.php">About Us</a></li>
                                 <li><a href = "logIn.php" style="font-weight: bold;">Log In</a>&nbsp;|&nbsp;
-                                <a href = "sign_up.php" style="font-weight: bold;">Sign Up</a></li>
+                                <a href = "signup_page.php" style="font-weight: bold;">Sign Up</a></li>
                                 
                             </ul>
                         </nav>

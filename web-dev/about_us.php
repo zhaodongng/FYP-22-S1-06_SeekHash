@@ -54,6 +54,9 @@ else
                 </div>
             </div>
 
+            <!--Price-->
+            <h5 class="mt-2 text-center">Pricing</h5>
+
             
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
         </body>
