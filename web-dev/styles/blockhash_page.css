@@ -1,0 +1,93 @@
+.blockhashprogram{
+    min-height: 100vh;
+    justify-content: center;
+    background-image: url("../img/background1.png");
+    background-size: cover;
+}
+/* Blockhash page stylesheet*/
+
+.blockhashbox h2 {
+    color: #854DFF;
+    font-weight: 400;
+    text-decoration: none;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.blockhashbox p {
+    color: #64D2B5;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.blockhashbox label {
+    color: #F2F7FF;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.blockhashbox hr {
+    border-top: 4px dashed #64D2B5;
+    width: 50%;
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+.blockhashbox {
+    margin-left: 250px;
+}
+
+.blockhashbox input {
+    border: none;
+    background-color: #061551;
+    color: #F2F7FF;
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid #F2F7FF;
+}
+
+.blockhashbox input:hover {
+    color: #854DFF;
+}
+
+.analyseBtn{
+      font-size: 1rem;
+      color: aliceblue;
+      background-color: #854DFF;
+      padding: 0.6rem 2rem;
+      margin-top: 0.6rem;
+      border: none;
+      border-radius: 1rem;
+    }
+
+.analyseBtn:hover{
+    background-color: aliceblue;
+    color:#854DFF;
+}
+
+#myModal{
+    padding-top: 5rem;
+  }
+
+  .modal-content{
+    background-color: #AD8BF7;
+    color: aliceblue;
+  }
+
+  .hr1{
+    color: #2C1A55;
+  }
+  .mbtns{
+    color: aliceblue;
+    background-color: #2C1A55;
+    padding: 0.4rem 1rem;
+    border-radius: 0.9rem;
+    border: none;
+  }
+
+  .mbtns:hover{
+    color: #2C1A55;
+    background-color: aliceblue;
+  }
+
+  
