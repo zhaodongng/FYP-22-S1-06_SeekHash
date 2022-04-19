@@ -1,3 +1,15 @@
+<?php
+session_start();
+include 'db_inc.php';
+
+if(isset($_SESSION['name']))
+{
+    include'header_footer2.php'; 
+}
+else
+{ 
+    include'header_footer.php'; 
+}?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,7 +25,6 @@
         <link rel= "stylesheet" href="styles/blockhash_page.css" type="text/css"/> 
     </head>
     <body>
-        <?php include("index_template.php") ?>
         <!-- BlockHash Page Contents -->
         <section class="blockhashprogram">
             <div class="blockhashbox">

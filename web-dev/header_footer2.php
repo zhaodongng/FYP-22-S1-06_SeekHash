@@ -18,7 +18,16 @@
                     <nav class="mt-3">
                             <ul class ="nav__links">
                                 <li><a href="home.php">Home</a></li>
-                                <li><a href="program_page.php">Program</a></li>
+                                <li><div class="dropdown">
+                                        <button class="btn dropdownBtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Program
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="program_page.php">Hash/File</a>
+                                            <a class="dropdown-item" href="blockhash_page.php">Block/Address/Transaction</a>    
+                                        </div>
+                                    </div>
+                                </li>
                                 <li><a href="about_us.php">About Us</a></li>
                                 <li><a href="history.php">History</a></li>
                                 <li><div class="dropdown">

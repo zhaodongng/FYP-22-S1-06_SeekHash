@@ -26,7 +26,6 @@ else
         <link rel= "stylesheet" href="styles/program_page.css" type="text/css"/> 
     </head>
     <body>
-        <?php include("index_template.php") ?>
         <!-- Program Page Contents -->
         <section class="program">
             <div class="programbox">
