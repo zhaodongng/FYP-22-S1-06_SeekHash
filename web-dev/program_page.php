@@ -1,3 +1,16 @@
+<?php
+session_start();
+include 'db_inc.php';
+
+if(isset($_SESSION['name']))
+{
+    include'header_footer2.php'; 
+}
+else
+{ 
+    include'header_footer.php'; 
+}?>
+
 <!DOCTYPE html>
 <html>
     <head>
