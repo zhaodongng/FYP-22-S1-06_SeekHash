@@ -18,3 +18,10 @@ CREATE TABLE seekhash_db.hash_info(
                 past_attacks LONGTEXT NOT NULL);
 
 ALTER TABLE seekhash_db.file_info ADD CONSTRAINT `file_fkey1` FOREIGN KEY (`f_id`) REFERENCES `user_info`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+INSERT INTO seekhash_db.hash_info(hash_name, past_attacks) VALUES ('md2', 'MD2 is considered a weak hash, superseded by MD5(Weak against collisions)');
+INSERT INTO seekhash_db.hash_info(hash_name, past_attacks) VALUES ('md4', 'MD4 is considered a weak hash, superseded by MD5(Weak against collisions)');
+INSERT INTO seekhash_db.hash_info(hash_name, past_attacks) VALUES ('md5', 'MD5 is weak against collision resistance, prefix collision attacks, pre-image resistance attacks(theory) and length extension attacks');
+INSERT INTO seekhash_db.hash_info(hash_name, past_attacks) VALUES ('sha1', 'SHA-1 is weak against collision resistance, length extension attacks and prefix collision attacks, it is superseded by SHA-2 & SHA-3');
+INSERT INTO seekhash_db.hash_info(hash_name, past_attacks) VALUES ('ripemd', 'RIPEMD is weak against collision resistance');
+INSERT INTO seekhash_db.hash_info(hash_name, past_attacks) VALUES ('sha0', 'SHA-0 is weak against collision resistance and is superseded by SHA-2 & SHA-3');
