@@ -31,15 +31,17 @@
             $hashes_found_at = $output_array[4];
 
             // Insert elements of output array into seekhashdb.file_info table
-            /*
             $conn = mysqli_connect("localhost", "root", "root", "seekhash_db");
             if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
-            $sql = "INSERT INTO seekhash_db.file_info(name, password, email) VALUES ('$signup_user', '$signup_pass', '$signup_email')";
+            $sql = "INSERT INTO seekhash_db.file_info(day_upload, file_read_in, programming_language_detected, 
+                                                      platforms, probabilities, hashes_found_at) 
+                    VALUES (now(), '$file_read_in', '$programming_language_detected', 
+                            '$platforms', '$probabilities', '$hashes_found_at')";
             if($conn->query($sql)){
                 echo "results inserted!";
             }
             mysqli_close($conn);
-            */
+
             include "report_page.php";
             
         ?>

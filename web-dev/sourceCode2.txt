@@ -1,0 +1,85 @@
+import hashlib
+import json
+from Crypto.PublicKey import DSA
+from Crypto.Signature import DSS
+from Crypto.Hash import SHA256
+import binascii
+
+with open('Assignment2.json', 'r+') as json_file:
+	data = json.load(json_file)
+	pk = (data['Pubkey'])
+	pkh = (data['PubkeyHash'])
+	dg = (data['DSA.g'])
+	dp = (data['DSA.p'])
+	dq = (data['DSA.q'])
+	sig = (data['Signature'])
+	#remove prefix '0x' from signature for message verification
+	sign = sig[2:]
+	
+	#Step 0: Stack is empty
+	print('Stack:')
+	print('Empty')
+	print('\n')
+
+	#Step 1: signature and public key is first pushed into stack
+	print('Step 1 Stack:')
+	print('Public key:' + pk)
+	print('Signature:' + sig)
+	print('\n')
+
+	#Step 2: OP_DUP pushes a duplicated public key onto stack
+	pkdup1 = pk
+	print('Step 2 Stack:')
+	print('Duplicated public key:' + pkdup1)	
+	print('Public key:' + pk)
+	print('Signature:' + sig)
+	print('\n')
+
+	md5
+	sha512
+	sha1
+    md5
+
+	#Step 3: OP_HASH160 hashes the duplicated public key
+	pkh1 = hashlib.sha256(pk.encode()).hexdigest()
+	fpkh = pkh1[-40:]
+	print('Step 3 Stack:')
+	print('Duplicated public key hash:' + fpkh)
+	print('Public key:' + pk)
+	print('Signature:' + sig)
+	print('\n')
+
+	#Step 4: original public key hash is pushed into stack
+	print('Step 4 Stack:')
+	print('Public key hash:' + pkh)
+	print('Duplicated public key hash:' + fpkh)
+	print('Public key:' + pk)
+	print('Signature:' + sig)
+	print('\n')
+
+	#Step 5:OP_EQUALVERIFY checks public key hash of the public keys  
+	if (pkh == fpkh):
+		print('Hashed public key verified')
+	else:
+		print('Wrong hashed public key')
+	print('Step 5 Stack:')
+	print('Public key:' + pk)
+	print('Signature:' + sig)
+	print('\n')
+
+	#Step 6: OP_CHECKSIG verifies the message and empties the stack if the message is authentic
+	signature = binascii.unhexlify(sign)
+	tup = [int(pk,16), int(dg,16), int(dp,16), int(dq,16)]
+	pubkey = DSA.construct(tup)
+	hashobj = SHA256.new(b'CSCI301_Assignment2')
+	verifier = DSS.new(pubkey,'fips-186-3')
+	try:
+		verifier.verify(hashobj, signature)
+		print('The message is verified')
+		print('Step 6 Stack:')
+		print('Empty')
+	except ValueError:
+		print('The message is not authentic')
+		print('Step 6 Stack:')
+		print('Public key:' + pk)
+		print('Signature:' + sig)

@@ -103,13 +103,42 @@ li,a {
     padding-bottom: 40px;
 }
 
-.reportbox h2 {
-    color: #061551;
+.reportbox table{
+    border: 1px solid black;
+    width: 80%;
+    text-align: center;
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.reportbox th {
+    background-color: #854DFF;
+    color: #F2F7FF;
+    border: 1px solid black;
+    height: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.reportbox td {
+    border: 1px solid black;
+    height: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px;
 }
 
 .reportbox button {
@@ -118,7 +147,6 @@ li,a {
     border-radius: 20px;
     padding: 10px 30px 10px 30px;
     border: none;
-    position: fixed;
+    position: relative;
     left: 1100px;
-    top: 550px;
 }
