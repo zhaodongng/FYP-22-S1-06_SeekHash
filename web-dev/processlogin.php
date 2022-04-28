@@ -1,15 +1,14 @@
 <?php
-
+    include "db_inc.php";
     $login_user = $_POST["login_username"];
     $login_pass = $_POST["login_password"];
 
     function verify_username($login_user){
+        global $conn;
         $verify = false;
         if (!empty($login_user)){ $verify = true; }
         else { $verify = false; }
         if ($verify == true){
-            $conn = mysqli_connect("localhost", "root", "root", "seekhash_db");
-            if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
             $sql = "SELECT * FROM seekhash_db.user_info WHERE name = '$login_user'";
             $result = $conn->query($sql);
             if ($result->num_rows == 0){
@@ -25,8 +24,7 @@
         if (!empty($login_pass)){ $verify = true; }
         else { $verify = false; }
         if ($verify == true){
-            $conn = mysqli_connect("localhost", "root", "root", "seekhash_db");
-            if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
+            global $conn;
             $sql = "SELECT name, password FROM seekhash_db.user_info WHERE name = '$login_user'";
             $result = $conn->query($sql);
             if ($result->num_rows == 0){
