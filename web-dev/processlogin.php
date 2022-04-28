@@ -1,7 +1,7 @@
 <?php
     include "db_inc.php";
-    $login_user = $_POST["login_username"];
-    $login_pass = $_POST["login_password"];
+    $login_user = $_POST["name"];
+    $login_pass = $_POST["pwd"];
 
     function verify_username($login_user){
         global $conn;
