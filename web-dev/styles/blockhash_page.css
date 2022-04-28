@@ -12,18 +12,22 @@
     text-decoration: none;
     padding-top: 40px;
     padding-bottom: 40px;
+    font-size: 40px;
 }
 
 .blockhashbox p {
     color: #64D2B5;
     font-weight: 400;
     text-decoration: none;
+    font-size: 24px;
 }
 
 .blockhashbox label {
     color: #F2F7FF;
     font-weight: 400;
     text-decoration: none;
+    font-size: 18px;
+    margin: 10px;
 }
 
 .blockhashbox hr {
@@ -44,6 +48,7 @@
     border: 0;
     outline: 0;
     border-bottom: 2px solid #F2F7FF;
+    margin-top: 10px;
 }
 
 .blockhashbox input:hover {

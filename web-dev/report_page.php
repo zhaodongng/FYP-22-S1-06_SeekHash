@@ -1,3 +1,16 @@
+<?php
+session_start();
+include 'db_inc.php';
+
+if(isset($_SESSION['name']))
+{
+    include'header_footer2.php'; 
+}
+else
+{ 
+    include'header_footer.php'; 
+}?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,19 +31,49 @@
         <div class="reportbackground">
             <div class="reportbox">
                 <h1>Analysis</h1>
-                <h2>
                     <?php
-                        $reportFile = fopen("report.txt", "r") or die("Unable to open file!");
-                        //$reportContents = fread($reportFile, filesize("report.txt"));
-                        //echo "<p>$reportContents</p>";
-
-                        while(!feof($reportFile)) {
-                            echo fgets($reportFile) . "<br>";
+                        // Select data to display from seekhashdb.file_info table
+                        try{
+                            $conn = mysqli_connect("localhost", "root", "root", "seekhash_db");
+                        }
+                        catch (mysqli_sql_exception $e)
+                        {
+                            die("Connection failed: " . mysqli_connect_errno() . " - " . 
+                                mysqli_connect_error());
+                        }
+            
+                        $sql = "SELECT * FROM seekhash_db.file_info";
+            
+                        try{
+                            $conn = mysqli_query($conn, $sql);
+                            $items = array();
+                            while ($row = mysqli_fetch_assoc($conn)) {
+                                $items[] = $row;
+                            }
+                        }
+                        catch (mysqli_sql_exception $e)
+                        {
+                            die("Select from seekhash_db.file_info failed: " . mysqli_connect_errno() . " - " . 
+                                mysqli_connect_error());
                         }
 
-                        fclose($reportFile);
+                        echo "<table><tr><th>File ID</th><th>Uploaded On</th><th>File Read In</th><th>Programming Language Detected</th><th>Platforms</th>" . 
+                             "<th>Probabilities</th><th>Hashes Found At</th>" . "</tr>";
+                        foreach($items as $report_data) {
+                            echo "<tr>" . 
+                                 "<td>{$report_data['f_id']}</td>" . 
+                                 "<td>{$report_data['day_upload']}</td>" . 
+                                 "<td>{$report_data['file_read_in']}</td>" . 
+                                 "<td>{$report_data['programming_language_detected']}</td>" . 
+                                 "<td>{$report_data['platforms']}</td>" .
+                                 "<td>{$report_data['probabilities']}</td>" . 
+                                 "<td>{$report_data['hashes_found_at']}</td></tr>";
+                        }
+                        
+                        echo "</table>";
+                        
+                        mysqli_close($conn);
                     ?>
-                </h2>
                 <button>Download</button>
             </div>
         </div>
