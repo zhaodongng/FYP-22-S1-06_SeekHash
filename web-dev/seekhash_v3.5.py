@@ -200,7 +200,7 @@ def find_digsig(lang, script):
         if all(x in script for x in DSAlist):
             digitalSignature = "Digital Signature Algorithm (DSA)"
 
-        
+        if all(x in script for x in RSAlist):
             digitalSignature = "RSA"
 
     #--3--: C++
