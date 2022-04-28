@@ -11,43 +11,90 @@
   
   body{
     overflow-x: hidden;
+  }
+
+  .bg_1{
+    background-image:url("../img/about_us_bg.png");
+    min-height: 25vh;
+    color: #F2F7FF;
+  }
+
+  .our_program{
+    min-height: 50vh;
     background-color: #AD8BF7;
   }
-
-  .about_usH4{
-      color: #F2F7FF;
-      margin-left: 1rem;
+  .program_bg img{
+    background-color: #AD8BF7;
+    border: none;
+    border-color: #AD8BF7;
   }
 
-  .about_usH42{
-      color: #F2F7FF;
-      margin-left: 73rem;
+   .program_info{
+     background-color: #F2F7FF;
+   }
+
+   .program_info h3{
+     color: #854DFF;
+     text-decoration: underline;
+   }
+
+   .story_info{
+     background-color: #F2F7FF;
+   }
+
+   .story_info h3{
+    color: #854DFF;
+    text-decoration: underline;
   }
 
-  .program{
-      background-color: #F2F7FF;
-      border-radius: 1rem;
-      height: 9rem;
+  .story_bg img{
+    background-color: #AD8BF7;
+    border: none;
+    border-color: #AD8BF7;
   }
 
-  .program p {
-      font-size: 0.9rem;
-  }
-
-  .story{
+  .vision_info{
     background-color: #F2F7FF;
-    border-radius: 1rem;
-    height: 9rem;
   }
 
-  .story p{
-    font-size: 0.9rem;
-  }
+  .vision_info h3{
+   color: #854DFF;
+   text-decoration: underline;
+ }
 
-  .vision{
-    background-color: #F2F7FF;
-    border-radius: 1rem;
-    height: 13rem;
-    }
+ .vision_bg img{
+  background-color: #AD8BF7;
+  border: none;
+  border-color: #AD8BF7;
+}
 
+.price{
+  background-color: #AD8BF7;
+}
+
+.price h3{
+  color: #F2F7FF;
+    text-decoration: underline;
+}
+
+.price .card{
+  background-color: #2C1A55;
+}
+
+.card h4{
+  color: #F2F7FF;
+}
+
+.card h6{
+  color: #854DFF;
+}
+
+.team_member{
+  background-color: #AD8BF7;
+}
+
+.team_member h3{
+  color: #F2F7FF;
+  text-decoration: underline;
+}
 

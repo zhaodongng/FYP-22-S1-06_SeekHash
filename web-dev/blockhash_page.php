@@ -10,6 +10,7 @@ else
 { 
     include'header_footer.php'; 
 }?>
+
 <!DOCTYPE html>
 <html>
     <head>

@@ -25,37 +25,107 @@ else
         </head>
 
         <body>
-            <!--Our program-->
-            <h5 class="mt-2 about_usH4">Our Program</h5>
-            <div class="row">
-                <div class="col-6 program">
-                <p class="m-2">Our program analyse the hash and give a report.<span style="color: red;">Need to add more.</span></p>
+            <div class="bg_1 d-flex justify-content-center">
+                <h2 class="text-center mt-5 fw-bold">About Us</h2>
+            </div>
+            <div class="row our_program">
+                    <div class="col-5 program_bg">
+                        <img class="img-thumbnail mt-2" src="./img/program.png" />
+                    </div>
+                    <div class="col-7 mt-2 program_info" style="border-radius: 6em; padding-left:1em;">
+                        <h3 class="text-center mt-3 fw-bold">Our Program</h3>
+                        
+                    </div>
+            </div>
+            <div class="row our_program p-2">
+                    <div class="col-7 story_info" style="border-radius: 6em; padding-left:1em;">
+                        <h3 class="text-center mt-3 fw-bold">Our Story</h3>
+                    </div>
+                    <div class="col-5 p-0 story_bg">
+                        <img class="img-thumbnail p-2" src="./img/story.png"/>
+                    </div>
+                    
+            </div>
+            <div class="row our_program">
+                    <div class="col-5 vision_bg">
+                        <img class="img-thumbnail" src="./img/vision.png" />
+                    </div>
+                    <div class="col-7 vision_info mb-2" style="border-radius: 6em; padding-left:1em;">
+                        <h3 class="text-center mt-3 fw-bold">Our Vision</h3>
+                        
+                    </div>
+            </div>
+            <div class="price m-0 p-0">
+                <h3 class="mb-0 text-center">Pricing</h3>
+                <div class="row p-5">
+                    <div class="col-4 d-flex text-center justify-content-center">
+                        <div class="card" style="border-radius: 50%;">
+                        <div class="card-body">
+                            <h4 class="card-title mb-1 fw-bold text-center">$13</h4>
+                            <h6 class="card-subtitle mb-2 text-center">/week</h6>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 d-flex text-center justify-content-center">
+                        <div class="card" style="border-radius: 50%;">
+                        <div class="card-body">
+                            <h4 class="card-title mb-1 fw-bold text-center">$32</h4>
+                            <h6 class="card-subtitle mb-2 text-center">/month</h6>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 d-flex text-center justify-content-center">
+                        <div class="card" style="border-radius: 50%;">
+                        <div class="card-body">
+                            <h4 class="card-title mb-1 fw-bold text-center">$312</h4>
+                            <h6 class="card-subtitle mb-2 text-center">/year</h6>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!--Our story-->
-            <h5 class="mt-2 about_usH42">Our Story</h5>
-            <div class="row">
-                <div class="col-6"></div>
-                <div class="col-6 p-1 story">
-                <p class="m-2">Our team will develop and implement a site for users to upload blockchain program codes as well as hashes with the objective of detecting the hash function within blockchain source codes. The program will analyze your codes and detect any hash functions. A summary report of the hash function will be displayed for the user which includes the type of hash detected and its strength. </p>
+            <div class="team_member">
+                <h3 class="text-center">Team members</h3>
+                <div class="row">
+                    <div class="col-4 p-2">
+                        <img class="rounded-circle img-thumbnail z-depth-2 mx-auto d-block" alt="100x100" src="./img/ZD.jpeg" style="width: 10em; height:10em"
+                        data-holder-rendered="true">
+                        <h5 class="mt-1 text-center">Ng Zhao Dong</h5>
+                        <h6 class="text-center">Cyber Security</h6>
+                    </div>
+                    <div class="col-4 p-2">
+                        <img class="rounded-circle img-thumbnail z-depth-2 mx-auto d-block" alt="100x100" src="./img/JNT.jpeg" style="width: 10em; height:10em"
+                        data-holder-rendered="true">
+                        <h5 class="mt-1 text-center">Chee Jonathan</h5>
+                        <h6 class="text-center">Cyber Security</h6>
+                    </div>
+                    <div class="col-4 p-2">
+                        <img class="rounded-circle img-thumbnail z-depth-2 mx-auto d-block" alt="100x100" src="./img/QX.jpeg" style="width: 10em; height:10em"
+                        data-holder-rendered="true">
+                        <h5 class="mt-1 text-center">Seng Qiao Xin</h5>
+                        <h6 class="text-center">Big Data</h6>
+                    </div>
                 </div>
-            </div>
-
-            <!--Our vision-->
-            <h5 class="mt-2 about_usH4">Our Vision</h5>
-            <div class="row">
-                <div class="col-6 vision">
-                <p class="m-2">
-                    Create and design a user-friendly web site for users to utilise the program, functionalities as well as navigation of the site.<br/>
-                    Develop a program to read in and analyse the source code that was uploaded by the user and detect for any hash function within the code.<br/>
-                    Develop the program to be able to read the 5-programming languages, namely, “Solidity”, “Python”, “C++”, “Java” and “Go”.<br/>
-                    Create a function to generate a report for the users regarding the hash function that was detected in the source codes that was uploaded.</p>
+                <div class="row">
+                <div class="col-6 p-2">
+                        <img class="rounded-circle img-thumbnail z-depth-2 mx-auto d-block" alt="100x100" src="./img/KC.jpg" style="width: 10em; height:10em"
+                        data-holder-rendered="true">
+                        <h5 class="mt-1 text-center">Khin Chaw Thazin</h5>
+                        <h6 class="text-center">Business Information System</h6>
+                    </div>
+                    <div class="col-6 p-2">
+                        <img class="rounded-circle img-thumbnail z-depth-2 mx-auto d-block" alt="100x100" src="./img/EQ.jpeg" style="width: 10em; height:10em"
+                        data-holder-rendered="true">
+                        <h5 class="mt-1 text-center">Tan Eiin Qian </h5>
+                        <h6 class="text-center">Cyber Security</h6>
+                    </div>
                 </div>
+                
             </div>
-
-            <!--Price-->
-            <h5 class="mt-2 text-center">Pricing</h5>
+            
 
             
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
