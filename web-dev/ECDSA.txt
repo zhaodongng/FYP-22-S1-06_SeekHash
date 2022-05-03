@@ -1,0 +1,91 @@
+#include <CkCrypt2.h>
+#include <CkPrivateKey.h>
+#include <CkPrng.h>
+#include <CkEcc.h>
+#include <CkPublicKey.h>
+
+void ChilkatSample(void)
+    {
+    // This example requires the Chilkat API to have been previously unlocked.
+    // See Global Unlock Sample for sample code.
+
+    // To create an ECDSA signature, the data first needs to be hashed.  Then the hash
+    // is signed.
+
+    // Use Chilkat Crypt2 to generate a hash for any of the following
+    // hash algorithms: SHA256, SHA384, SHA512, SHA1, MD5, MD2, HAVAL, RIPEMD128/160/256/320
+
+    CkCrypt2 crypt;
+    crypt.put_HashAlgorithm("SHA256");
+    crypt.put_Charset("utf-8");
+    crypt.put_EncodingMode("base64");
+
+    // Hash a string.
+    const char *hash1 = crypt.hashStringENC("The quick brown fox jumps over the lazy dog");
+    std::cout << "hash1 = " << hash1 << "\r\n";
+
+    // Or hash a file..
+    const char *hash2 = crypt.hashFileENC("qa_data/hamlet.xml");
+    std::cout << "hash2 = " << hash2 << "\r\n";
+
+    // (The Crypt2 API provides many other ways to hash data..)
+
+    // -----------------------------------------------------------
+    // An ECDSA private key is used for signing.  The public key is for signature verification.
+    // Load our ECC private key.
+    // Our private key file contains this:
+
+    // 	// -----BEGIN PRIVATE KEY-----
+    // 	MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQg3J8q/24D1sEKGdP9
+    // 	72MGYElLGpw/a56Y3t6pfON3uhShRANCAATlSmoizyhAwoYZAOuFBATl07/1RR54
+    // 	a1Dzfm16grxJe666AGKR+bSs24hk7TEpaeCTvT8YOOM3l+xKFg7zq6Q9
+    // 	-----END PRIVATE KEY-----
+
+    CkPrivateKey privKey;
+    bool success = privKey.LoadPemFile("qa_data/ecc/secp256r1-key-pkcs8.pem");
+    if (success != true) {
+        std::cout << privKey.lastErrorText() << "\r\n";
+        return;
+    }
+
+    // We'll need a PRNG source for random number generation.
+    // Use Chilkat's PRNG (for the Fortuna PRNG algorithm).
+    CkPrng prng;
+
+    // Sign the hash..
+    CkEcc ecdsa;
+    const char *ecdsaSigBase64 = ecdsa.signHashENC(hash1,"base64",privKey,prng);
+    if (ecdsa.get_LastMethodSuccess() != true) {
+        std::cout << ecdsa.lastErrorText() << "\r\n";
+        return;
+    }
+
+    std::cout << "ECDSA signature = " << ecdsaSigBase64 << "\r\n";
+
+    // -----------------------------------------------------------
+    // Now let's verify the signature using the public key.
+
+    CkPublicKey pubKey;
+    success = pubKey.LoadFromFile("qa_data/ecc/secp256r1-pubkey.pem");
+    if (success != true) {
+        std::cout << pubKey.lastErrorText() << "\r\n";
+        return;
+    }
+
+    int result = ecdsa.VerifyHashENC(hash1,ecdsaSigBase64,"base64",pubKey);
+    if (result == 1) {
+        std::cout << "Signature is valid." << "\r\n";
+        return;
+    }
+
+    if (result == 0) {
+        std::cout << "Signature is invalid." << "\r\n";
+        return;
+    }
+
+    if (result < 0) {
+        std::cout << ecdsa.lastErrorText() << "\r\n";
+        std::cout << "The VerifyHashENC method call failed." << "\r\n";
+        return;
+    }
+    }
