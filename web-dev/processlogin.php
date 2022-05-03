@@ -15,7 +15,6 @@
                 echo "Invalid username";
                 $verify = false; }
         }
-        mysqli_close($conn);
         return $verify;
     }
 
@@ -33,22 +32,19 @@
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     if ($login_user = $row["name"] and $login_pass = $row["password"]){
-                        echo $login_user;
-                        echo $login_pass;
                         $verify = true;
                     } else { $verify = false; }
                 }
             }
         }
-        mysqli_close($conn);
         return $verify;
     }
 
     $verify = verify_username($login_user);
     if ($verify == 1){
         $verify = verify_access($login_user, $login_pass);
-        echo "im in";
-        include "after_logIn_home.php";
+        include "home.php";
     } else {
         echo "Invalid username or password";
     }
+?>

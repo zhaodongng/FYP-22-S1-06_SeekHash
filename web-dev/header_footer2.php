@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>
-            <div class="container-fluid">
+            <div class="d-none d-md-block container-fluid">
                 <div class="row p-0">
                     <div class="col-2 mt-1 text-center logo">
                         <h1 class="d-inline p-0">Seek</h1>
@@ -22,9 +22,9 @@
                                         <button class="btn dropdownBtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Program
                                         </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="program_page.php">Hash/File</a>
-                                            <a class="dropdown-item" href="blockhash_page.php">Block/Address/Transaction</a>    
+                                        <div class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item ditem" href="program_page.php">Hash/File</a>
+                                            <a class="dropdown-item ditem" href="blockhash_page.php">Block/Address/Transaction</a>    
                                         </div>
                                     </div>
                                 </li>
