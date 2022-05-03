@@ -18,16 +18,21 @@ header {
     background-color: #F2F7FF;
 }
 
-.logo h1{
-    background-color: #F2F7FF;
-}
-
 .logo .hash{
     color: #854DFF;
 }
 
 .logo .hash b{
     background-color: #F2F7FF;
+}
+
+/*mobile logo*/
+.m_logo{
+    background-color: #F2F7FF;
+}
+
+.m_logo div .hash{
+    color: #854DFF;
 }
 
 /*nav bar*/
@@ -53,12 +58,148 @@ header {
     background-color: #061551;
     display: inline-block;
     padding: 0px 10px;
-    color: #854DFF;
+    color: #256430;
 }
 
 .nav__links li a{
     color: #F2F7FF;
 }
+
+/*mobile nav*/
+.menu-wrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.menu-wrap .togger{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    opacity: 0;
+}
+
+.menu-wrap .hamburger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*hambugur line*/
+.menu-wrap .hamburger > div{
+    position: relative;
+    width: 100%;
+    height: 0.2rem;
+    background-color: #854DFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger >div::after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -0.5rem;
+    width: 100%;
+    height: 0.2rem;
+    background-color: inherit;
+}
+
+/*move line down*/
+.menu-wrap .hamburger > div::after{
+    top: 0.5rem;
+}
+
+/* Show Menu */
+.menu-wrap .togger:checked ~ .menu {
+    visibility: visible;
+}
+
+.menu-wrap .togger:checked ~ .menu > div {
+    transform: scale(1);
+    transition: 0.5s;
+  }
+
+.menu-wrap .togger:checked ~ .menu > div > div {
+    opacity: 1;
+    transition:  opacity 0.2s ease 0.4s;
+}
+
+/*togger animation*/
+.menu-wrap .togger:checked + .hamburger > div{
+    transform: rotate(135deg);
+}
+
+/*turn lines into X*/
+.menu-wrap .togger:checked + .hamburger > div::before,
+.menu-wrap .togger:checked + .hamburger >div::after{
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.menu-wrap .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-wrap .menu > div {
+    background-color: #061551;
+    width: 200vw;
+    height: 200vw;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 95%;
+    transform: scale(0);
+    transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > div {
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+} 
+
+.menu-wrap .menu > div > div > ul > li {
+    list-style: none;
+    color: #F2F7FF;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .menu-wrap .menu > div > div > ul > li > a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
+  }
+  
+
 
 /*logIn button*/
 .dropdownBtn{
@@ -69,14 +210,39 @@ header {
     box-shadow: none !important;
 }
 
-.dropdown-menu{
+.dmenu{
     background-color: #061551 !important;
 }
 
-.dropdown-item:hover{
+.ditem:hover{
     background-color: #AD8BF7 !important;
     color: #061551 !important;
 }
+
+/*mobile_dropdown*/
+.m_dropdownBtn{
+    color: #F2F7FF;
+    border: none;
+    outline: none;
+    box-shadow: none !important;
+}
+
+.m_dropdownBtn:focus{
+    color: #854DFF;
+}
+.m_dmenu{
+    background-color: #061551 !important;
+}
+
+.m_dmenu a{
+    color: #F2F7FF;
+    font-size: 0.9rem;
+}
+
+.m_ditem:hover{
+    color: #AD8BF7 !important;
+}
+
 /*footer*/
 .fixed__footer {
     position: fixed;
