@@ -42,7 +42,7 @@ else
                                 mysqli_connect_error());
                         }
             
-                        $sql = "SELECT * FROM seekhash_db.file_info";
+                        $sql = "SELECT * FROM seekhash_db.file_info WHERE f_id = (SELECT MAX(f_id) FROM seekhash_db.file_info)";
             
                         try{
                             $conn = mysqli_query($conn, $sql);
@@ -57,20 +57,9 @@ else
                                 mysqli_connect_error());
                         }
 
-                        echo "<table><tr><th>File ID</th><th>Uploaded On</th><th>File Read In</th><th>Programming Language Detected</th><th>Platforms</th>" . 
-                             "<th>Probabilities</th><th>Hashes Found At</th>" . "</tr>";
-                        foreach($items as $report_data) {
-                            echo "<tr>" . 
-                                 "<td>{$report_data['f_id']}</td>" . 
-                                 "<td>{$report_data['day_upload']}</td>" . 
-                                 "<td>{$report_data['file_read_in']}</td>" . 
-                                 "<td>{$report_data['programming_language_detected']}</td>" . 
-                                 "<td>{$report_data['platforms']}</td>" .
-                                 "<td>{$report_data['probabilities']}</td>" . 
-                                 "<td>{$report_data['hashes_found_at']}</td></tr>";
-                        }
-                        
-                        echo "</table>";
+                        echo "<pre>";
+                        print_r($items);
+                        echo "</pre>";
                         
                         mysqli_close($conn);
                     ?>

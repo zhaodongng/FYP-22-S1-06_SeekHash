@@ -261,7 +261,7 @@ def guess_language(file):
         data = readFile.read()
         name = guess.language_name(data)
         prob = guess.probabilities(data)
-        print(name)
+        #print(name)
     return name, prob
 
 # detect solidity
