@@ -18,7 +18,7 @@ include 'db_inc.php';
             $sourceCodeFile = $_FILES['sourcecode']['name'];
 
             // Execute the SeekHash python program.
-            $output = shell_exec("/usr/local/bin/python3.8 seekhash_v3.5.py $sourceCodeFile 2>&1");
+            $output = shell_exec("/usr/local/bin/python3.8 seekhash_v3.6.py $sourceCodeFile 2>&1");
             //echo $output;
 
             // Convert output string into an array

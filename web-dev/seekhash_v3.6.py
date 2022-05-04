@@ -513,8 +513,7 @@ def main():
             if Dict_key in hash_found and Dict_key not in found_array:
                 found_array.append(Dict_key)
                 outputTxt += "{}-{}bits".format(Dict_key.upper(), hashLengthDict[Dict_key])
-
-    outputTxt += ","
+                outputTxt += ","
 
     #-7- Find digital signature used in the programming language
     digitalSignature = find_digsig(language, contents)
