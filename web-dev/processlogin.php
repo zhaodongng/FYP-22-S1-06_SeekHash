@@ -40,11 +40,25 @@
         return $verify;
     }
 
+    function get_userid($login_user){
+        global $conn;
+        $user_id = "";
+        $sql = "SELECT name, user_id FROM seekhash_db.user_info WHERE name = '$login_user'";
+        if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $row['user_id'] = $user_id;
+                }
+        }
+        return $user_id;
+    }
+
     $verify = verify_username($login_user);
     if ($verify == 1){
         $verify = verify_access($login_user, $login_pass);
+        $user_id = get_userid($login_user);
         session_start();
         $_SESSION['name'] = $login_user;
+        $_SESSION['name']['user_id'] = $user_id;
         header("location: home.php");
     } else {
         echo "Invalid username or password";
