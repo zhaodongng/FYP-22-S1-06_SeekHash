@@ -1,3 +1,15 @@
+<?php
+session_start();
+include 'db_inc.php';
+
+if(isset($_SESSION['name']))
+{
+    include'header_footer2.php'; 
+}
+else
+{ 
+    include'header_footer.php'; 
+}?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,7 +22,7 @@
         <title>SeekHash</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel= "stylesheet" href="styles/home_template.css" type="text/css"/>
+        <link rel= "stylesheet" href="styles/history_page.css" type="text/css"/>
         <style>
             body.modal-open .supreme-container{
             -webkit-filter: blur(1.2rem);
@@ -72,7 +84,7 @@
                             <form>
                                 <div class="form-group text-center">
                                     <input type=button class="mbtns" style="margin-right: 0.5rem;"
-                                    onClick="location.href='login_page.php'" value='Log In'> Or 
+                                    onClick="location.href='logIn.php'" value='Log In'> Or 
                                     <input type=button class="mbtns" style="margin-left: 0.5rem;"
                                     onClick="location.href='signup_page.php'" value='Sign up'>
                                 </div>
