@@ -43,8 +43,11 @@
     $verify = verify_username($login_user);
     if ($verify == 1){
         $verify = verify_access($login_user, $login_pass);
-        include "home.php";
+        session_start();
+        $_SESSION['name'] = $login_user;
+        header("location: home.php");
     } else {
         echo "Invalid username or password";
+        header("location: logIn.php");
     }
 ?>
