@@ -512,19 +512,21 @@ def main():
         for Dict_key in hashLengthDict.keys():
             if Dict_key in hash_found and Dict_key not in found_array:
                 found_array.append(Dict_key)
-                outputTxt += "{}-{}bits-".format(Dict_key.upper(), hashLengthDict[Dict_key])
-              
+                outputTxt += "{}-{}bits".format(Dict_key.upper(), hashLengthDict[Dict_key])
+                """
                 for past in past_Attacks:
                     if Dict_key.lower() == past:
                         outputTxt += past_Attacks[Dict_key.lower()]
                         past_attacks_done.append(Dict_key.lower())
-
-                outputTxt += ";"
+                """
+                outputTxt += ","
 
     #-7- Find digital signature used in the programming language
     digitalSignature = find_digsig(language, contents)
     # print("Digital Signature: " + digitalSignature)
 
+    outputTxt = outputTxt[:-1]
+    outputTxt += ';'
     outputTxt += digitalSignature
     #print("Output file is stored in report.txt")
 
