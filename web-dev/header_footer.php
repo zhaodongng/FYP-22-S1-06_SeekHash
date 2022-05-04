@@ -40,7 +40,7 @@
             </div>
             <div class="d-md-none d-lg-none d-xl-none container-fluid">
                 <div class="row p-0 m_logo">
-                <div class="col-7 menu-wrap">
+                <div class="col-sm-7 col-xs-6 menu-wrap">
                         <input type="checkbox" class="togger">
                         <div class="hamburger"><div></div></div>
                         <div class="menu">
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-5 mt-1 mb-2 text-end">
+                    <div class="col-sm-5 col-xs-6 mt-1 mb-2 text-end">
                         <h1 class="d-inline">Seek</h1>
                         <h1 class="d-inline fw-bold hash"><b>#</b></h1>
                     </div>

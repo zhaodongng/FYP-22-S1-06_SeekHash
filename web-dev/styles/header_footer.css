@@ -219,6 +219,10 @@ header {
     color: #061551 !important;
 }
 
+.dropdownBtn:focus{
+    color: #854DFF;
+}
+
 /*mobile_dropdown*/
 .m_dropdownBtn{
     color: #F2F7FF;
