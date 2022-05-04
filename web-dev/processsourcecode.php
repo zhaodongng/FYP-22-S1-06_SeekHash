@@ -1,3 +1,7 @@
+<?php
+session_start();
+include 'db_inc.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,8 +27,7 @@
             print_r($output_array);
             echo "</pre>";
 
-            //echo $_SESSION["name"];
-
+            $upload_user = $_SESSION["name"];
             $file_read_in = $output_array[0];
             $programming_language_detected = $output_array[1];
             $platforms = $output_array[2];
@@ -36,10 +39,10 @@
             // Insert elements of output array into seekhashdb.file_info table
             $conn = mysqli_connect("localhost", "root", "root", "seekhash_db");
             if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
-            $sql = "INSERT INTO seekhash_db.file_info(day_upload, file_read_in, programming_language_detected, 
+            $sql = "INSERT INTO seekhash_db.file_info(upload_user, day_upload, file_read_in, programming_language_detected, 
                                                       platforms, probabilities, hashes_found_at, hash_information, 
                                                       digital_signature) 
-                    VALUES (now(), '$file_read_in', '$programming_language_detected', 
+                    VALUES ('$upload_user', now(), '$file_read_in', '$programming_language_detected', 
                             '$platforms', '$probabilities', '$hashes_found_at', '$hash_information', 
                             '$digital_signature')";
             if($conn->query($sql)){
