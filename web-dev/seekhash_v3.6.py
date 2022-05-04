@@ -1,6 +1,7 @@
 # seekhash_v3.3 added the digital signature function
 
 import sys
+import re
 from guesslang import Guess
 from collections import Counter
 
@@ -448,7 +449,8 @@ def main():
 
     #-1- Script input
     script = sys.argv[1]
-    script = script.lower()
+    pattern = "[^\/]+$"
+    script = re.findall(pattern, script)
     hashLengthDict = {}
     digitalSignature = " "
     outputTxt = ""
