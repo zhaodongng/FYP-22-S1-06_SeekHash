@@ -6,12 +6,15 @@ CREATE TABLE seekhash_db.user_info (
                 email VARCHAR(50) NOT NULL);
 CREATE TABLE seekhash_db.file_info(
     	    	f_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                upload_user VARCHAR(100) NOT NULL, 
                 day_upload VARCHAR(100) NOT NULL,
                 file_read_in VARCHAR(100) NOT NULL,
                 programming_language_detected VARCHAR(100) NOT NULL,
                 platforms VARCHAR(100) NOT NULL,
                 probabilities VARCHAR(100) NOT NULL,
-                hashes_found_at VARCHAR(100) NOT NULL);
+                hashes_found_at VARCHAR(100) NOT NULL, 
+                hash_information VARCHAR(200) NOT NULL, 
+                digital_signature VARCHAR(100) NOT NULL);
 CREATE TABLE seekhash_db.hash_info(
                 hash_name VARCHAR(30) PRIMARY KEY,
                 past_attacks LONGTEXT NOT NULL);
