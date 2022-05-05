@@ -44,6 +44,7 @@
         global $conn;
         $user_id = "";
         $sql = "SELECT name, user_id FROM seekhash_db.user_info WHERE name = '$login_user'";
+        $result = $conn->query($sql);
         if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     $row['user_id'] = $user_id;
