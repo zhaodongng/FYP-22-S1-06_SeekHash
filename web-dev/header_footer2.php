@@ -1,5 +1,4 @@
-
-<!-- Template for SeekHash website-->
+<!-- Template for SeekHash header-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,6 +29,7 @@
                                         </div>
                                     </div>
                                 </li>
+                                <li><a href="history.php">History</a></li>
                                 <li><a href="about_us.php">About Us</a></li>
                                 <li><div class="dropdown">
                                         <button class="btn dropdownBtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -39,9 +39,9 @@
                                             </svg>
                                             <?php echo $_SESSION['name'];?>
                                         </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Profile</a>
-                                            <a class="dropdown-item" href="LogOut.php">Log Out</a>
+                                        <div class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item ditem" href="acc_details.php">Profile</a>
+                                            <a class="dropdown-item ditem" href="LogOut.php">Log Out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -70,6 +70,7 @@
                                             </div>
                                         </li>
                                         <li><a href="about_us.php">About Us</a></li>
+                                        <li><a href="history.php">History</a></li>
                                         <li><div class="dropdown">
                                                 <button class="btn m_dropdownBtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#F2F7FF" class="bi bi-person-circle" viewBox="0 0 16 16">

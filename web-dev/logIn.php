@@ -13,7 +13,7 @@
         <div class="container">
             <div class="title">LogIn Form</div>
             <div class="content">
-                <form method='POST' action='processlogin.php'>
+                <form method='POST' action='checkLogIn.php'>
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Name</span>
