@@ -65,8 +65,41 @@ else
         </section>
     </div>
 
-            
+    <?php
+        $current_user = $_SESSION['name'];
+
+        // Select data to display from seekhashdb.file_info table
+        try{
+            $conn = mysqli_connect("localhost", "root", "root", "seekhash_db");
+        }
+        catch (mysqli_sql_exception $e)
+        {
+            die("Connection failed: " . mysqli_connect_errno() . " - " . 
+                mysqli_connect_error());
+        }
+
+        $sql = "SELECT * FROM seekhash_db.file_info WHERE upload_user = '$current_user'";
+
+        try{
+            $conn = mysqli_query($conn, $sql);
+            $items = array();
+            while ($row = mysqli_fetch_assoc($conn)) {
+                $items[] = $row;
+            }
+        }
+        catch (mysqli_sql_exception $e)
+        {
+            die("Select from seekhash_db.file_info failed: " . mysqli_connect_errno() . " - " . 
+                mysqli_connect_error());
+        }
+
+        echo "<pre>";
+        print_r($items);
+        echo "</pre>";
         
+        mysqli_close($conn);
+
+    ?>                
         
     </body>
 </html>

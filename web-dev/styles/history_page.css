@@ -7,9 +7,43 @@
 /* Report page stylesheet*/
 .history h4 {
     font-family: 'Poppins', sans-serif;
-    color: aliceblue;
+    font-size: 50px;
+    margin: 20px;
+    color: #F2F7FF;
 }
 
+.history strong {
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  color: #AD8BF7;
+  padding: 10px;
+}
+
+.history p {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  padding: 10px;
+}
+
+.history a {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  padding: 10px;
+}
+
+.history .report {
+  background-color: #F2F7FF;
+  margin: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.history .report2 {
+  background-color: #F2F7FF;
+  margin: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
 
 #myModal{
     padding-top: 5rem;
