@@ -8,27 +8,30 @@
 .history h4 {
     font-family: 'Poppins', sans-serif;
     font-size: 50px;
-    margin: 20px;
     color: #F2F7FF;
+    padding: 30px;
 }
 
 .history strong {
   font-family: 'Poppins', sans-serif;
   font-size: 30px;
   color: #AD8BF7;
-  padding: 10px;
+  padding: 15px;
 }
 
 .history p {
   font-family: 'Poppins', sans-serif;
   color: black;
-  padding: 10px;
+  padding: 5px 15px 5px 15px;
 }
 
 .history a {
   font-family: 'Poppins', sans-serif;
-  color: black;
-  padding: 10px;
+  color: #F2F7FF;
+  padding: 15px;
+  background-color: #2C1A55;
+  border-radius: 10px;
+  margin: 15px;
 }
 
 .history .report {
@@ -36,13 +39,7 @@
   margin: 15px;
   border: 1px solid black;
   border-radius: 10px;
-}
-
-.history .report2 {
-  background-color: #F2F7FF;
-  margin: 15px;
-  border: 1px solid black;
-  border-radius: 10px;
+  padding: 30px;
 }
 
 #myModal{

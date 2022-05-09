@@ -25,48 +25,9 @@ else
         <link rel= "stylesheet" href="styles/history_page.css" type="text/css"/> 
     </head>
     <body>
-    <div class="supreme-container">
-        <section class="history">
-            <div class="row row1">
-                <div class="col-12"><h4>History</h4></div>
-            </div>
-            <div class="row row2">
-                <div class="col-6">
-                    <div class="report">
-                        <h5 class="fw-bold"><strong>Report</strong></h5>
-                        <p>This is a paragraph.</p>
-                        <a href="#">View More</a>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="report2">
-                        <h5 class="fw-bold"><strong>Report</strong></h5>
-                        <p>This is a paragraph.</p>
-                        <a href="#">View More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row row2 mt-4">
-                <div class="col-6">
-                    <div class="report">
-                        <h5 class="fw-bold"><strong>Report</strong></h5>
-                        <p>This is a paragraph.</p>
-                        <a href="#">View More</a>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="report2">
-                        <h5 class="fw-bold"><strong>Report</strong></h5>
-                        <p>This is a paragraph.</p>
-                        <a href="#">View More</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
 
     <?php
-        $current_user = $_SESSION['name'];
+        $current_user = $_SESSION["name"];
 
         // Select data to display from seekhashdb.file_info table
         try{
@@ -93,9 +54,21 @@ else
                 mysqli_connect_error());
         }
 
-        echo "<pre>";
-        print_r($items);
-        echo "</pre>";
+        echo '<section class="history">';
+        echo "<h4>History</h4>";
+
+        $report_count = count($items);
+        for($i = 1; $i <= $report_count; $i++) {
+            echo '<div class="report">
+                  <h5 class="fw-bold"><strong>Report ' . $i . '</strong></h5>' . 
+                  '<p>File ID: ' . $items[$i-1]["f_id"]. '</p>' . 
+                  '<p>Uploaded on: ' . $items[$i-1]["day_upload"]. '</p>' . 
+                  '<p>Uploaded file: ' . $items[$i-1]["file_read_in"]. '</p>' . 
+                  '<a href="report_page.php">View More</a>
+                  </div>';
+        } 
+
+        echo '</section>';
         
         mysqli_close($conn);
 
