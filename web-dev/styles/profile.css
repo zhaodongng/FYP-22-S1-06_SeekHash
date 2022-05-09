@@ -7,3 +7,40 @@
     color: #F2F7FF;
     border: none;
 }
+
+/*change button*/
+.change_pw {
+	box-shadow: 0px 4px 2px 0px #63696b;
+	background-color:#854dff;
+	border-radius:19px;
+	display:inline-block;
+	cursor:pointer;
+	color:#2C1A55;
+	font-size:12px;
+	font-weight:bold;
+	padding:4px 9px;
+	text-decoration:none;
+    border: none;
+}
+.change_pw:hover {
+	background-color:#2C1A55;
+    color: #854dff;
+    text-decoration: none;
+}
+.change_pw:active {
+	position:relative;
+	top:1px;
+    background-color:#2C1A55;
+    color: #854dff;
+}
+
+/* change password form */
+.change_pw_form{
+    display: none;
+}
+
+.new_pw:focus{
+   border-color: #854dff !important;
+   outline: none !important;
+    
+}

@@ -59,8 +59,8 @@
         $user_id = get_userid($login_user);
         session_start();
         $_SESSION['name'] = $login_user;
-        $_SESSION['name']['user_id'] = $user_id;
-        header("location: home.php");
+        //$_SESSION['name']['user_id'] = $user_id;
+        header("Location: home.php?loginsuccess");
     } else {
         echo "Invalid username or password";
         header("location: logIn.php");
