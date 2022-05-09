@@ -29,7 +29,7 @@
                 <input type="text" name="signup_confirmpassword" onfocus="this.value = ''" value="Confirm Password"/><br />
                 <input type="submit" name="signup_submit" value="Sign Up" class="signupbtn"/>
             </form>
-            <h2>Already a member?<a href="login_page.php">Log In</a></h2>
+            <h2>Already a member?<a href="logIn.php">Log In</a></h2>
         </div>
 
         <!-- Optional JavaScript -->
