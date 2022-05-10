@@ -13,60 +13,113 @@
     overflow-x: hidden;
   }
 
-  .bg_1{
-    background-image:url("../img/about_us_bg.png");
-    min-height: 25vh;
-    color: #F2F7FF;
-  }
-
-  .our_program{
-    min-height: 50vh;
+  /* about us title */
+  .title{
     background-color: #AD8BF7;
+    color:#2C1A55;
   }
-  .program_bg img{
-    background-color: #AD8BF7;
-    border: none;
-    border-color: #AD8BF7;
-  }
-
-   .program_info{
-     background-color: #F2F7FF;
-   }
-
-   .program_info h3{
-     color: #854DFF;
-     text-decoration: underline;
-   }
-
-   .story_info{
-     background-color: #F2F7FF;
-   }
-
-   .story_info h3{
-    color: #854DFF;
-    text-decoration: underline;
-  }
-
-  .story_bg img{
-    background-color: #AD8BF7;
-    border: none;
-    border-color: #AD8BF7;
-  }
-
-  .vision_info{
-    background-color: #F2F7FF;
-  }
-
-  .vision_info h3{
-   color: #854DFF;
-   text-decoration: underline;
- }
-
- .vision_bg img{
+/* our program */
+.program{
   background-color: #AD8BF7;
-  border: none;
-  border-color: #AD8BF7;
 }
+
+.program .program_content img{
+  height: auto;
+  width: 600px;
+  max-width: 100%;
+}
+
+.program_text{
+  width: 550px;
+  max-width: 100%;
+  padding: 0 10px;
+}
+
+.program_content{
+  width: 1280px;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.program_content h3{
+  color: #2C1A55;
+  font-size: 35px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+/* our story */
+.story{
+  background-color: #AD8BF7;
+}
+
+.story .story_content img{
+  height: auto;
+  width: 600px;
+  max-width: 100%;
+}
+
+.story_text{
+  width: 550px;
+  max-width: 100%;
+  padding: 0 10px;
+}
+
+.story_content{
+  width: 1280px;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.story_content h3{
+  color: #2C1A55;
+  font-size: 35px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+/* our vision */
+.vision{
+  background-color: #AD8BF7;
+}
+
+.vision .vision_content img{
+  height: auto;
+  width: 600px;
+  max-width: 100%;
+}
+
+.vision_text{
+  width: 550px;
+  max-width: 100%;
+  padding: 0 10px;
+}
+
+.vision_content{
+  width: 1280px;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.vision_content h3{
+  color: #2C1A55;
+  font-size: 35px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
 
 .price{
   background-color: #AD8BF7;
@@ -74,7 +127,8 @@
 
 .price h3{
   color: #F2F7FF;
-    text-decoration: underline;
+  text-decoration: underline;
+  font-size: 35px;
 }
 
 .price .card{
@@ -90,11 +144,13 @@
 }
 
 .team_member{
+  
   background-color: #AD8BF7;
 }
 
 .team_member h3{
   color: #F2F7FF;
   text-decoration: underline;
+  font-size: 35px;
 }
 

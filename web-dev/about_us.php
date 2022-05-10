@@ -25,36 +25,51 @@ else
         </head>
 
         <body>
-            <div class="bg_1 d-flex justify-content-center">
-                <h2 class="text-center mt-5 fw-bold">About Us</h2>
+            <div class="d-flex justify-content-center title">
+                <h2 class="text-center mt-2 fw-bold">About Us</h2>
             </div>
-            <div class="row our_program">
-                    <div class="col-5 program_bg">
-                        <img class="img-thumbnail mt-2" src="./img/program.png" />
+            <section class="program">
+                <div class="program_content">
+                    <img src="./img/program.png">
+                    <div class="program_text">
+                    <h3>Our Program</h3>
+                    <ul>
+                        <li>The user can upload and analyse file,hash,address,block and transaction.</li>
+                        <li>The user can download the analysis report file.</li></br>
+                        <p class="fw-bold p-0 m-0">Once the user creates account , </p> 
+                        <li>The user can look back the history list and previous analysis report.</li>
+                    </ul>
                     </div>
-                    <div class="col-7 mt-2 program_info" style="border-radius: 6em; padding-left:1em;">
-                        <h3 class="text-center mt-3 fw-bold">Our Program</h3>
-                        
+                </div>
+            </section>
+            <section class="story">
+                <div class="story_content">
+                    <img src="./img/story.png" class="d-md-none d-lg-none d-xl-none">
+                    <div class="story_text">
+                    <h3>Our Story</h3>
+                    <p class="text-justify">
+                        This hash analysing program is developed by 5 final year students of UOW, coming from different backgrounds.
+                        3 of team members who are from big data and cyber security do the backend parts and the rest of team members take responsibility for the frontend part. 
+                    </p>
                     </div>
-            </div>
-            <div class="row our_program p-2">
-                    <div class="col-7 story_info" style="border-radius: 6em; padding-left:1em;">
-                        <h3 class="text-center mt-3 fw-bold">Our Story</h3>
+                    <img src="./img/story.png" class="d-none d-md-block">
+                </div>
+            </section>
+            <section class="vision">
+                <div class="vision_content">
+                    <img src="./img/vision.png">
+                    <div class="vision_text">
+                    <h3>Our VIsion</h3>
+                    <ul class="text-justify">
+                            <li>Create and design a user-friendly web site for users to utilise the program, functionalities as well as navigation of the site. </li>
+                            <li>Develop a program to read in and analyse the source code that was uploaded by the user and detect for any hash function within the code.</li>
+                            <li>Develop the program to be able to read the 5-programming languages, namely, “Solidity”, “Python”, “C++”, “Java” and “Go”.</li>
+                            <li>Create a function to generate a report for the users regarding the hash function that was detected in the source codes that was uploaded.</li>
+                    </ul>
                     </div>
-                    <div class="col-5 p-0 story_bg">
-                        <img class="img-thumbnail p-2" src="./img/story.png"/>
-                    </div>
-                    
-            </div>
-            <div class="row our_program">
-                    <div class="col-5 vision_bg">
-                        <img class="img-thumbnail" src="./img/vision.png" />
-                    </div>
-                    <div class="col-7 vision_info mb-2" style="border-radius: 6em; padding-left:1em;">
-                        <h3 class="text-center mt-3 fw-bold">Our Vision</h3>
-                        
-                    </div>
-            </div>
+                </div>
+            </section>
+
             <div class="price m-0 p-0">
                 <h3 class="mb-0 text-center">Pricing</h3>
                 <div class="row p-5">
@@ -90,19 +105,19 @@ else
             <div class="team_member">
                 <h3 class="text-center">Team members</h3>
                 <div class="row">
-                    <div class="col-4 p-2">
+                    <div class="col-md-4 col-sm-12 p-2">
                         <img class="rounded-circle img-thumbnail z-depth-2 mx-auto d-block" alt="100x100" src="./img/ZD.jpeg" style="width: 10em; height:10em"
                         data-holder-rendered="true">
                         <h5 class="mt-1 text-center">Ng Zhao Dong</h5>
                         <h6 class="text-center">Cyber Security</h6>
                     </div>
-                    <div class="col-4 p-2">
+                    <div class="col-md-4 col-sm-6 p-2">
                         <img class="rounded-circle img-thumbnail z-depth-2 mx-auto d-block" alt="100x100" src="./img/JNT.jpeg" style="width: 10em; height:10em"
                         data-holder-rendered="true">
                         <h5 class="mt-1 text-center">Chee Jonathan</h5>
                         <h6 class="text-center">Cyber Security</h6>
                     </div>
-                    <div class="col-4 p-2">
+                    <div class="col-md-4 col-sm-6 p-2">
                         <img class="rounded-circle img-thumbnail z-depth-2 mx-auto d-block" alt="100x100" src="./img/QX.jpeg" style="width: 10em; height:10em"
                         data-holder-rendered="true">
                         <h5 class="mt-1 text-center">Seng Qiao Xin</h5>
@@ -110,13 +125,13 @@ else
                     </div>
                 </div>
                 <div class="row">
-                <div class="col-6 p-2">
+                <div class="col-md-6 col-sm-12 p-2">
                         <img class="rounded-circle img-thumbnail z-depth-2 mx-auto d-block" alt="100x100" src="./img/KC.jpg" style="width: 10em; height:10em"
                         data-holder-rendered="true">
                         <h5 class="mt-1 text-center">Khin Chaw Thazin</h5>
                         <h6 class="text-center">Business Information System</h6>
                     </div>
-                    <div class="col-6 p-2">
+                    <div class="col-md-6 col-sm-12 p-2">
                         <img class="rounded-circle img-thumbnail z-depth-2 mx-auto d-block" alt="100x100" src="./img/EQ.jpeg" style="width: 10em; height:10em"
                         data-holder-rendered="true">
                         <h5 class="mt-1 text-center">Tan Eiin Qian </h5>
