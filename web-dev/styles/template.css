@@ -13,7 +13,7 @@
     overflow-x: hidden;
   }
   
-  #home,#how_it_work{
+  #home,#subscription{
     min-height: 90vh;
     display: flex;
     align-items: center;
@@ -22,9 +22,9 @@
     background: #AD8BF7;
     letter-spacing: 2px;
   }
-  
-  #about,#subscription{
-    min-height: 90vh;
+
+  #how_it_work{
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,8 +33,26 @@
     background-size: cover;
   }
   
- 
+  /* home for mobile view */
+  #home_m,#subscription_m{
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #AD8BF7;
+    letter-spacing: 2px;
+  }
 
+  #how_it_work_m{
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    background: #2C1A55;
+    background-size: cover;
+  }
+  
   /*sign_up*/
   #home h1{
     font-size: 50px;
@@ -51,22 +69,27 @@
    background-color: white;
    color: #2C1A55;
  }
-  /*about*/
-  #about h5{
-    color: #854DFF;
-    font-size: 25px;
-    padding-top: 20px;
-    padding-bottom: 10px;
+
+  /*sign_up for mobile view*/
+  #home_m h1{
+    font-size: 2rem;
   }
 
-  #about ul li,#about p{
-    font-size: 16px;
-    color: #fff;
-  }
+ #home_m a{
+   background-color: #2C1A55;
+   color: white;
+   border-radius: 30px;
+   padding: 10px 40px;
+ }
+
+ #home_m a:hover{
+   background-color: white;
+   color: #2C1A55;
+ }
 
   /*how it work*/
   #how_it_work h4{
-    color: #2C1A55;
+    color: #854DFF;
     text-decoration: underline;
     font-size: 35px;
     padding-top: 20px;
@@ -77,15 +100,38 @@
     font-size: 25px;
     padding-top: 20px;
     padding-bottom: 10px;
-    background-color: #2C1A55;
+    background-color: #AD8BF7;
     border-radius: 1rem;
   }
 
   #how_it_work p{
     font-size: 16px;
-    color: #2C1A55;
+    color: #854DFF;
   }
-  
+
+  /*how it work for mobile view*/
+  #how_it_work_m h4{
+    color: #854DFF;
+    text-decoration: underline;
+    font-size: 35px;
+    padding-top: 20px;
+  }
+
+  #how_it_work_m h5{
+    color: #fff;
+    font-size: 25px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #AD8BF7;
+    border-radius: 1rem;
+  }
+
+  #how_it_work_m p{
+    font-size: 16px;
+    color: #854DFF;
+  }
+  /*how it work for mobile view end*/
+
   /*subscription*/
   #subscription h4{
     color:#854DFF;
@@ -103,26 +149,23 @@
     color: #854DFF;
   }
 
-  /*history page*/
-  .history{
-    min-height: 100vh;
-    justify-content: center;
-    background-size: cover;
+  /* subscription mobile view */
+  #subscription_m h4{
+    color:#854DFF;
   }
 
-  .history h4{
-    color: aliceblue;
-    margin-left: 5rem;
-    font-size: 2rem;
+  #subscription_m a{
+    background-color: #854DFF;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 40px;
   }
 
-  .history .row1{
-    padding: 1rem 2rem;
+  #subscription_m a:hover{
+    background-color: white;
+    color: #854DFF;
   }
-
-  .history .row2{
-    padding: 0rem 6rem;
-  }
+/* subscription mobile view end*/
 
   .row2 .report{
     background-color: aliceblue;

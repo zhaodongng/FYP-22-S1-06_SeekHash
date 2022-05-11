@@ -31,7 +31,7 @@ else
 
         // Select data to display from seekhashdb.file_info table
         try{
-            $conn = mysqli_connect("localhost", "root", "root", "seekhash_db");
+            $conn = mysqli_connect("localhost", "root", " ", "seekhash_db");
         }
         catch (mysqli_sql_exception $e)
         {
