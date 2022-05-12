@@ -80,7 +80,7 @@
                                                     <?php echo $_SESSION['name'];?>
                                                 </button>
                                                 <div class="dropdown-menu m_dmenu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item m_ditem" href="#">Profile</a>
+                                                    <a class="dropdown-item m_ditem" href="acc_details.php">Profile</a>
                                                     <a class="dropdown-item m_ditem" href="LogOut.php">Log Out</a>
                                                 </div>
                                             </div>

@@ -5,13 +5,14 @@
     font-family: 'Poppins', sans-serif;
   }
   
-  html{
-    scroll-behavior: smooth;
-  }
-  
-  body{
-    overflow-x: hidden;
-  }
+  html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
 
   /* about us title */
   .title{

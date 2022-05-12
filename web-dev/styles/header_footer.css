@@ -6,6 +6,15 @@
     padding: 0;
 }
 
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
 /*Edit Style in all of HEADER which is the Navigation Bar */
 header {
     display: flex;
@@ -168,7 +177,8 @@ header {
 .menu-wrap .menu > div {
     background-color: #061551;
     width: 200vw;
-    height: 200vw;
+    height: 100vh;
+    margin-top: 7rem;
     display: flex;
     flex: none;
     align-items: center;

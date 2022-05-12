@@ -52,7 +52,7 @@ else
                         </div>
                         <div class="col-6 p-5">
                             <h5 class="text-center">Sign up to enjoy more features</h5>
-                            <p class="p-1">
+                            <p>
                             1. You can view the history of the source code as well as the report you have uploaded to our website.
                             <br/>2. You can search the report by using the report id.
                             <br/>3. You can delete and download the source code and report to view it on your own devices.
@@ -67,9 +67,9 @@ else
                 <section class="sec" id="subscription">
                     <div class="row">
                         <div class="col-12"><h4 class="text-start">Subscription</h4></div>
-                        <div class="col-6 p-1"><input type="text" class="form-control" placeholder="First Name"></div>
-                        <div class="col-6 p-1"><input type="text" class="form-control" placeholder="Last Name"></div>
-                        <div class="col-12 p-1"><input type="text" class="form-control" placeholder="Email"></div>
+                        <div class="col-6 p-1"><input type="text" class="form-control" autocomplete="off" placeholder="First Name"></div>
+                        <div class="col-6 p-1"><input type="text" class="form-control" autocomplete="off" placeholder="Last Name"></div>
+                        <div class="col-12 p-1"><input type="text" class="form-control" autocomplete="off" placeholder="Email"></div>
                         <div class="col-12 text-center p-1"><a href="signup_page.php" class="btn">Subscribe</a></div>
                     </div>
                 </section>
@@ -102,7 +102,7 @@ else
                         </div>
                         <div class="col-12 p-4">
                             <h5 class="text-center">Sign up to enjoy more features</h5>
-                            <p class="p-1">
+                            <p>
                             1. You can view the history of the source code as well as the report you have uploaded to our website.
                             <br/>2. You can search the report by using the report id.
                             <br/>3. You can delete and download the source code and report to view it on your own devices.
@@ -113,6 +113,15 @@ else
                 </section>
                 <!--how it work ends-->
 
+                <div class="subscription_m">
+                    <h4>Subscription</h4>
+                    <form method='POST' action='#'>
+                        <input type="text"  name='f_name' class="f_name" autocomplete="off" placeholder="First Name" required>
+                        <input type="text" name='l_name' class="l_name" autocomplete="off" placeholder="Last Name" required>
+                        <input type="text" name='email' class="email" autocomplete="off" placeholder="Email" required>
+                        <input type="submit" value="Subscribe" class="subscribe_btn" name='checkbutton'>
+                    </form>
+                </div>
             </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
         </body>

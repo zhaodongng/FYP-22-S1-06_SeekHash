@@ -5,13 +5,14 @@
     font-family: 'Poppins', sans-serif;
   }
   
-  html{
-    scroll-behavior: smooth;
-  }
-  
-  body{
-    overflow-x: hidden;
-  }
+  html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
   
   #home,#subscription{
     min-height: 90vh;
@@ -25,7 +26,6 @@
 
   #how_it_work{
     min-height: 60vh;
-    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3em;
@@ -43,51 +43,25 @@
     letter-spacing: 2px;
   }
 
-  #how_it_work_m{
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3em;
-    background: #2C1A55;
-    background-size: cover;
-  }
-  
-  /*sign_up*/
+/*sign_up*/
   #home h1{
     font-size: 50px;
   }
 
  #home a{
    background-color: #2C1A55;
-   color: white;
+   color: #F2F7FF;
    border-radius: 30px;
    padding: 10px 40px;
  }
-
+ 
  #home a:hover{
-   background-color: white;
+   background-color: #F2F7FF;
    color: #2C1A55;
  }
+/*sign_up ends*/
 
-  /*sign_up for mobile view*/
-  #home_m h1{
-    font-size: 2rem;
-  }
-
- #home_m a{
-   background-color: #2C1A55;
-   color: white;
-   border-radius: 30px;
-   padding: 10px 40px;
- }
-
- #home_m a:hover{
-   background-color: white;
-   color: #2C1A55;
- }
-
-  /*how it work*/
+/*how it work*/
   #how_it_work h4{
     color: #854DFF;
     text-decoration: underline;
@@ -96,7 +70,7 @@
   }
 
   #how_it_work h5{
-    color: #fff;
+    color: #F2F7FF;
     font-size: 25px;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -106,10 +80,59 @@
 
   #how_it_work p{
     font-size: 16px;
-    color: #854DFF;
+    color: #F2F7FF;
   }
 
-  /*how it work for mobile view*/
+
+/*how it work end*/
+
+/*subscription*/
+  #subscription h4{
+    color:#2C1A55;
+  }
+
+  #subscription a{
+    background-color: #854DFF;
+    color: #F2F7FF;
+    border-radius: 30px;
+    padding: 10px 40px;
+  }
+
+  #subscription a:hover{
+    background-color: #F2F7FF;
+    color: #854DFF;
+  }
+/*subscription ends*/
+
+/*sign_up for mobile view*/
+#home_m h1{
+  font-size: 2rem;
+}
+
+#home_m a{
+ background-color: #2C1A55;
+ color: #F2F7FF;
+ border-radius: 30px;
+ padding: 10px 40px;
+}
+/*sign_up for mobile view* ends/
+
+#home_m a:hover{
+ background-color: #F2F7FF;
+ color: #2C1A55;
+}
+
+/*how it work for mobile view*/
+#how_it_work_m{
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  background: #2C1A55;
+  background-size: cover;
+}
+
   #how_it_work_m h4{
     color: #854DFF;
     text-decoration: underline;
@@ -118,7 +141,7 @@
   }
 
   #how_it_work_m h5{
-    color: #fff;
+    color: #F2F7FF;
     font-size: 25px;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -128,114 +151,56 @@
 
   #how_it_work_m p{
     font-size: 16px;
-    color: #854DFF;
-  }
-  /*how it work for mobile view end*/
-
-  /*subscription*/
-  #subscription h4{
-    color:#854DFF;
+    color: #F2F7FF;
   }
 
-  #subscription a{
+/*how it work for mobile view end*/
+
+/* subscription mobile view */
+  .subscription_m{
+    min-height: 30vh;
+    background: #AD8BF7;
+  }
+
+  .subscription_m h4{
+    display: flex;
+    justify-content: center;
+    color: #2C1A55;
+    font-size: 2rem;
+    text-decoration: underline;
+    padding: 1rem;
+  }
+
+  .subscription_m .f_name{
+    width: 11rem;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subscription_m .l_name{
+    width: 11rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subscription_m .email{
+    width: 22.3rem;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subscription_m .subscribe_btn{
+    display: block;
+    text-align: center;
+    margin: auto;
+    width: 10rem;
+    border-radius: 0.7em;
+    border: #854DFF;
     background-color: #854DFF;
-    color: white;
-    border-radius: 30px;
-    padding: 10px 40px;
+    color: aliceblue;
   }
 
-  #subscription a:hover{
-    background-color: white;
-    color: #854DFF;
-  }
-
-  /* subscription mobile view */
-  #subscription_m h4{
-    color:#854DFF;
-  }
-
-  #subscription_m a{
-    background-color: #854DFF;
-    color: white;
-    border-radius: 30px;
-    padding: 10px 40px;
-  }
-
-  #subscription_m a:hover{
-    background-color: white;
-    color: #854DFF;
+  .subscription_m .subscribe_btn:hover + :active{
+    background-color:#2C1A55;
   }
 /* subscription mobile view end*/
-
-  .row2 .report{
-    background-color: aliceblue;
-    border-radius: 2rem;
-    width: 35rem;
-    height: 13rem;
-  }
-
-  .report h5{
-    margin-left: 1rem; 
-    padding-top: .5rem;
-    color: #854DFF;
-  }
-
-  .report p{
-    margin-left: 1rem; 
-  }
-
-  .report a{
-    position: fixed;
-    margin-left: 29rem;
-    margin-top: 5.6rem;
-  }
-  .row2 .report2{
-    background-color: aliceblue;
-    border-radius: 2rem;
-    width: 35rem;
-    height: 13rem;
-    margin-left: 2rem;
-  }
-
-  .report2 h5{
-    margin-left: 1rem; 
-    padding-top: .5rem;
-    color: #854DFF;
-  }
-
-  .report2 p{
-    margin-left: 1rem; 
-  }
-
-  .report2 a{
-    position: fixed;
-    margin-left: 29rem;
-    margin-top: 5.6rem;
-  }
-
-  #myModal{
-    padding-top: 5rem;
-  }
-
-  .modal-content{
-    background-color: #AD8BF7;
-    color: aliceblue;
-  }
-
-  .hr1{
-    color: #2C1A55;
-  }
-  .mbtns{
-    color: aliceblue;
-    background-color: #2C1A55;
-    padding: 0.4rem 1rem;
-    border-radius: 0.9rem;
-    border: none;
-  }
-
-  .mbtns:hover{
-    color: #2C1A55;
-    background-color: aliceblue;
-  }
-
-  
