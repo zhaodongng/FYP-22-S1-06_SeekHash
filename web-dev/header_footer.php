@@ -10,10 +10,9 @@
     <body>
         <header>
             <div class="d-none d-md-block container-fluid">
-                <div class="row p-0">
-                    <div class="col-2 mt-1 text-center logo">
-                        <h1 class="d-inline p-0">Seek</h1>
-                        <h1 class="d-inline p-0 fw-bold hash"><b>#</b></h1>
+                <div class="row">
+                    <div class="col-2 d-block justify-contents-center text-center p-0 mt-1 logo">
+                        <h1 class="d-inline p-0 m-0">Seek <span class="fw-bold hash"><b>#</b></span></h1>
                     </div>
                     <div class="col-10 d-flex justify-content-end nav1">
                     <nav class="mt-3">

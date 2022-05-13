@@ -50,23 +50,6 @@ else
                 
             </form>
         </div>
-        <!-- BlockHash Page Contents -->
-        <!-- <section class="blockhashprogram">
-            <div class="blockhashbox">
-                <form action="processblockhash.php" method="post">
-                    <h2 style="color:aliceblue;"><b>Upload Block Hash</b></h2>
-                    <p>Select blockhash option:</p>
-                    <input type="radio" id="block" name="blockhash_option" value="Block" />
-                    <label for="block">Block</label><br />
-                    <input type="radio" id="address" name="blockhash_option" value="Address" />
-                    <label for="address">Address</label><br />
-                    <input type="radio" id="transaction" name="blockhash_option" value="Transaction" />
-                    <label for="transaction">Transaction</label><br />
-                    <input type="text" name="blockhash" onfocus="this.value = ''" value="Type your blockhash"/>&nbsp;&nbsp;
-                    <input type="submit" />
-                </form>
-            </div>
-        </section> -->
         
     </body>
 </html>

@@ -59,7 +59,7 @@ else
                 <div class="vision_content">
                     <img src="./img/vision.png">
                     <div class="vision_text">
-                    <h3>Our VIsion</h3>
+                    <h3>Our Vision</h3>
                     <ul class="text-justify">
                             <li>Create and design a user-friendly web site for users to utilise the program, functionalities as well as navigation of the site. </li>
                             <li>Develop a program to read in and analyse the source code that was uploaded by the user and detect for any hash function within the code.</li>

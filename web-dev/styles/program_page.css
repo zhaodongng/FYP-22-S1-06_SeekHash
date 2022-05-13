@@ -1,8 +1,7 @@
 .program{
     min-height: 100vh;
     justify-content: center;
-    background-image: url("../img/background1.png");
-    background-size: cover;
+    background-color: #2C1A55;
 }
 /* Program page stylesheet*/
 
@@ -95,4 +94,80 @@
     background-color: aliceblue;
   }
 
+  body{
+      background-color: #2C1A55;
+  }
+  
+  .program_h{
+    color: #854DFF;
+    text-align: center;
+    margin-top: 2em;
+    text-decoration: underline;
+  }
+
+  .input_submit{
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  .input_submit .input_hash{
+    background-color: #2C1A55;
+    color: #F2F7FF;
+    border: none;
+    border-bottom: 3px solid #854DFF;
+    outline: none !important;
+    margin-left: 1em;
+  }
+  
+  .input_submit .input_hash:focus{
+    outline: none !important;
+    color: #854DFF;
+  }
+
+  .input_submit .submit{
+    background-color: #AD8BF7;
+    color: #F2F7FF;
+    padding: 0.2rem 0.7rem;
+    border-radius: 0.4rem;
+  }
+  
+  /* source code upload */
+  .program_h1{
+    color: #854DFF;
+    text-align: center;
+    margin-top: 1em;
+    text-decoration: underline;
+  }
+  
+  .fileUpload{
+      display: block;
+      margin: auto;
+      color: #AD8BF7;
+      margin-top: 0.5rem;
+  }
+
+  .analyse{
+    display: block;
+    margin: auto;
+    margin-top: -0.5rem;
+    color: #F2F7FF;
+    background-color: #AD8BF7;
+    padding: 0.5rem 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 0.8rem;
+  }
+
+  hr{
+      border-top: 3px dashed white;
+      width: 40rem;
+      
+      display: block;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: auto;
+      margin-top: 2rem;
+  }
   

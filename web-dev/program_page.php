@@ -26,29 +26,20 @@ else
         <link rel= "stylesheet" href="styles/program_page.css" type="text/css"/> 
     </head>
     <body>
-        <!-- Program Page Contents -->
-        <section class="program">
-            <div class="programbox">
-            <form action="processhash.php" method="post">
-                <div class="uploadhashbox">
-                    <h2 style="color:aliceblue;"><b>Upload Hash Code</b></h2>
-                    <input type="text" name="hashcode" onfocus="this.value = ''" value="Type your hash output"/>&nbsp;&nbsp;
-                    <input type="submit" />
-                    <span id="verifyhashresult" class="errorMessage"></span>
-                </div>
-            </form>
-
-            <hr />
-
-            <form action="processsourcecode.php" method="post" enctype="multipart/form-data">
-                <div class="uploadsourcecodebox">
-                    <h2 class ="pb-1" style="color:aliceblue;"><b>Upload Your Source Code</b></h2>
-                    <input type="file" name="sourcecode" class="fileUpload" id="sourcecode"/><br />
-                    <input type="submit" class="analyseBtn" onClick="location.href='report_page.php'" value="Click to analyse the source code"/>
-                </div>
-            </form>
-        </div>
-        </section>
+        <h2 class="program_h">Upload Hash Code</h2>
+        <form action="processhash.php" method="post">
+            <div class="input_submit">
+                <input type="text" name="hashcode" class="input_hash"onfocus="this.value = ''" value="Type your hash output"/>&nbsp;&nbsp;
+                <input type="submit" class="submit"/>
+                <span id="verifyhashresult" class="errorMessage"></span>
+            </div>
+        </form>
+        <hr/>
+        <h2 class="program_h1">Upload Your Source Code</h2>
+        <form action="processsourcecode.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="sourcecode"class="fileUpload" id="sourcecode"/><br />
+            <input type="submit" class="analyse" value="Click to analyse the source code"/>
+        </form>
         
     </body>
 </html>
