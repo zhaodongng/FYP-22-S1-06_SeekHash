@@ -38,7 +38,7 @@ else
         <h2 class="program_h1">Upload Your Source Code</h2>
         <form action="processsourcecode.php" method="post" enctype="multipart/form-data">
             <input type="file" name="sourcecode"class="fileUpload" id="sourcecode"/><br />
-            <input type="submit" class="analyse" value="Click to analyse the source code"/>
+            <input type="submit" class="analyse" onClick="location.href='report_page.php'" value="Click to analyse the source code"/>
         </form>
         
     </body>
