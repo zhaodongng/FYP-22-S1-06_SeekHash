@@ -1,8 +1,7 @@
 .blockhashprogram{
     min-height: 100vh;
     justify-content: center;
-    background-image: url("../img/background1.png");
-    background-size: cover;
+    background-color: #2C1A55;
 }
 /* Blockhash page stylesheet*/
 
@@ -57,7 +56,7 @@
 
 .analyseBtn{
       font-size: 1rem;
-      color: aliceblue;
+      color: #F2F7FF;
       background-color: #854DFF;
       padding: 0.6rem 2rem;
       margin-top: 0.6rem;
@@ -66,33 +65,44 @@
     }
 
 .analyseBtn:hover{
-    background-color: aliceblue;
+    background-color: #F2F7FF;
     color:#854DFF;
 }
 
-#myModal{
-    padding-top: 5rem;
-  }
+/* blockhash heading */
+body{
+  background-color: #2C1A55;
+}
 
-  .modal-content{
-    background-color: #AD8BF7;
-    color: aliceblue;
-  }
+.upload_h3{
+  color: #854DFF;
+  text-align: center;
+  margin-top: 2em;
+  text-decoration: underline;
+}
 
-  .hr1{
-    color: #2C1A55;
-  }
-  .mbtns{
-    color: aliceblue;
-    background-color: #2C1A55;
-    padding: 0.4rem 1rem;
-    border-radius: 0.9rem;
-    border: none;
-  }
+.blockhashForm h5{
+  color: #F2F7FF;
+  text-align: center;
+  margin-top: 2em;
+}
 
-  .mbtns:hover{
-    color: #2C1A55;
-    background-color: aliceblue;
-  }
+.blockhashForm label{
+  color: #854DFF;
+}
+
+.blockhashForm input {
+  border: none;
+  background-color: #061551;
+  color: #F2F7FF;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid #F2F7FF;
+  text-align: center;
+}
+
+.blockhashForm input:hover {
+  color: #854DFF;
+}
 
   
