@@ -1,0 +1,119 @@
+Crypto++ library:
+#include <cryptopp>
+DSA::Signer signer;
+PrivateKey& privateKey = signer.AccessPrivateKey();
+
+privateKey.GenerateRandom( prng );
+privateKey.Save(FileSink("private.dsa.cpp.key"));
+
+DSA::Verifier verifier( signer );
+PublicKey& publicKey = verifier.AccessPublicKey();
+publicKey.Save(FileSink("public.dsa.cpp.key"));
+
+Chilkat library:
+#include <CkCrypt2.h>
+#include <CkDsa.h>
+
+void ChilkatSample(void)
+    {
+    // This example requires the Chilkat API to have been previously unlocked.
+    // See Global Unlock Sample for sample code.
+
+    CkCrypt2 crypt;
+
+    crypt.put_EncodingMode("hex");
+    crypt.put_HashAlgorithm("sha-1");
+
+    // Return the SHA-1 hash of a file.  The file may be any size.
+    // The Chilkat Crypt component will stream the file when 
+    // computing the hash, keeping the memory usage constant
+    // and reasonable.
+    // The 20-byte SHA-1 hash is returned as a hex-encoded string.
+    const char *hashStr = crypt.hashFileENC("hamlet.xml");
+
+    CkDsa dsa;
+
+    // Load a DSA private key from a PEM file.  Chilkat DSA
+    // provides the ability to load and save DSA public and private
+    // keys from encrypted or non-encrypted PEM or DER.
+    // The LoadText method is for convenience only.  You may
+    // use any means to load the contents of a PEM file into
+    // a string.
+    const char *pemPrivateKey = 0;
+    pemPrivateKey = dsa.loadText("dsa_priv.pem");
+    bool success = dsa.FromPem(pemPrivateKey);
+    if (success != true) {
+        std::cout << dsa.lastErrorText() << "\r\n";
+        return;
+    }
+
+    // You may optionally verify the key to ensure that it is a valid
+    // DSA key.
+    success = dsa.VerifyKey();
+    if (success != true) {
+        std::cout << dsa.lastErrorText() << "\r\n";
+        return;
+    }
+
+    // Load the hash to be signed into the DSA object:
+    success = dsa.SetEncodedHash("hex",hashStr);
+    if (success != true) {
+        std::cout << dsa.lastErrorText() << "\r\n";
+        return;
+    }
+
+    // Now that the DSA object contains both the private key and hash,
+    // it is ready to create the signature:
+    success = dsa.SignHash();
+    if (success != true) {
+        std::cout << dsa.lastErrorText() << "\r\n";
+        return;
+    }
+
+    // If SignHash is successful, the DSA object contains the
+    // signature.  It may be accessed as a hex or base64 encoded
+    // string.  (It is also possible to access directly in byte array form via
+    // the "Signature" property.)
+    const char *hexSig = dsa.getEncodedSignature("hex");
+    std::cout << "Signature:" << "\r\n";
+    std::cout << hexSig << "\r\n";
+
+    // -----------------------------------------------------------
+    // Step 2: Verify the DSA Signature
+    // -----------------------------------------------------------
+
+    CkDsa dsa2;
+
+    // Load the DSA public key to be used for verification:
+    const char *pemPublicKey = 0;
+    pemPublicKey = dsa2.loadText("dsa_pub.pem");
+    success = dsa2.FromPublicPem(pemPublicKey);
+    if (success != true) {
+        std::cout << dsa2.lastErrorText() << "\r\n";
+        return;
+    }
+
+    // Load the hash to be verified against the signature.
+    success = dsa2.SetEncodedHash("hex",hashStr);
+    if (success != true) {
+        std::cout << dsa2.lastErrorText() << "\r\n";
+        return;
+    }
+
+    // Load the signature:
+    success = dsa2.SetEncodedSignature("hex",hexSig);
+    if (success != true) {
+        std::cout << dsa2.lastErrorText() << "\r\n";
+        return;
+    }
+
+    // Verify:
+    success = dsa2.Verify();
+    if (success != true) {
+        std::cout << dsa2.lastErrorText() << "\r\n";
+    }
+    else {
+        std::cout << "DSA Signature Verified!" << "\r\n";
+    }
+    }
+
