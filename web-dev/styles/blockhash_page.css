@@ -74,7 +74,7 @@ body{
   background-color: #2C1A55;
 }
 
-.upload_h3{
+.upload_h2{
   color: #854DFF;
   text-align: center;
   margin-top: 2em;
@@ -91,18 +91,27 @@ body{
   color: #854DFF;
 }
 
-.blockhashForm input {
-  border: none;
-  background-color: #061551;
-  color: #F2F7FF;
-  border: 0;
-  outline: 0;
-  border-bottom: 2px solid #F2F7FF;
+.input_submit{
+  display: block;
+  margin: auto;
   text-align: center;
 }
+.input_submit .input_hash{
+  background-color: #2C1A55;
+  color: #F2F7FF;
+  border: none;
+  border-bottom: 3px solid #854DFF;
+  outline: none !important;
+}
 
-.blockhashForm input:hover {
+.input_submit .input_hash:focus{
+  outline: none !important;
   color: #854DFF;
 }
 
-  
+.input_submit .submit{
+  background-color: #AD8BF7;
+  color: #F2F7FF;
+  padding: 0.2rem 0.7rem;
+  border-radius: 0.4rem;
+}

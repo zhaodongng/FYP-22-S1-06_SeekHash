@@ -27,7 +27,7 @@ else
     </head>
     <body>
         <!-- BlockHash Page Contents -->
-        <h3 class="upload_h3">Upload Block Hash</h3>
+        <h2 class="upload_h2">Upload Block Hash</h2>
         <div class="blockhashForm">
             <form action="processblockhash.php" method="post">
                 <h5>Select blockhash option:</h5>
@@ -43,8 +43,11 @@ else
                     </div>
                     <div class="col-2 col-md-3"></div>
                 </div>
-                <input type="text" name="blockhash" onfocus="this.value = ''" value="Type your blockhash"/>&nbsp;&nbsp;
-                <input type="submit" />
+                <div class="input_submit">
+                   <input type="text" name="blockhash" class="input_hash" onfocus="this.value = ''" value="Type your blockhash"/>
+                    <input type="submit" class="submit"/> 
+                </div>
+                
             </form>
         </div>
         <!-- BlockHash Page Contents -->
