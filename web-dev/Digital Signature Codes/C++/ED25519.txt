@@ -1,0 +1,52 @@
+Chilkat library:
+#include <CkPrivateKey.h>
+#include <CkBinData.h>
+#include <CkEdDSA.h>
+#include <CkPublicKey.h>
+
+void ChilkatSample(void)
+    {
+    // This example assumes the Chilkat API to have been previously unlocked.
+    // See Global Unlock Sample for sample code.
+
+    const char *privKeyHex = "1498b5467a63dffa2dc9d9e069caf075d16fc33fdd4c3b01bfadae6433767d93";
+    const char *pubKeyHex = "b7a3c12dc0c8c748ab07525b701122b88bd78f600c76342d27f25e5f92444cde";
+
+    CkPrivateKey privKey;
+    // This example shows only one way of loading an Ed25519 private key.
+    // Chilkat can load other formats (JWK, PEM, ASN.1 DER, etc.)  
+    // You may do so by calling LoadAnyFormat or LoadAnyFormatFile.
+    bool success = privKey.LoadEd25519(privKeyHex,pubKeyHex);
+    if (success == false) {
+        std::cout << privKey.lastErrorText() << "\r\n";
+        return;
+    }
+
+    // The data to be signed...
+    CkBinData bd;
+    bd.AppendString("Message for Ed25519 signing","utf-8");
+
+    CkEdDSA eddsa;
+    const char *hexSig = eddsa.signBdENC(bd,"hexlower",privKey);
+
+    std::cout << "signature = " << hexSig << "\r\n";
+
+    // The expected output is: 6dd355667fae4eb43c6e0ab92e870edb2de0a88cae12dbd8591507f584fe4912babff497f1b8edf9567d2483d54ddc6459bea7855281b7a246a609e3001a4e08
+
+    // Verify the signature..
+    CkPublicKey pubKey;
+    success = pubKey.LoadEd25519(pubKeyHex);
+    if (success == false) {
+        std::cout << pubKey.lastErrorText() << "\r\n";
+        return;
+    }
+
+    bool bVerified = eddsa.VerifyBdENC(bd,hexSig,"hexlower",pubKey);
+    if (bVerified == false) {
+        std::cout << eddsa.lastErrorText() << "\r\n";
+        std::cout << "Failed to verify the signature." << "\r\n";
+        return;
+    }
+
+    std::cout << "The Ed25519 signature is verified!" << "\r\n";
+    }

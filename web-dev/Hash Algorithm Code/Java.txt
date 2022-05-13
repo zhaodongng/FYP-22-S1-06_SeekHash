@@ -1,0 +1,83 @@
+# Test MD5
+public void givenPassword_whenHashing_thenVerifying() 
+  throws NoSuchAlgorithmException {
+    String hash = "35454B055CC325EA1AF2126E27707052";
+    String password = "ILoveJava";
+        
+    MessageDigest md = MessageDigest.getInstance("MD5");
+    md.update(password.getBytes());
+    byte[] digest = md.digest();
+    String myHash = DatatypeConverter
+      .printHexBinary(digest).toUpperCase();
+        
+    assertThat(myHash.equals(hash)).isTrue();
+}
+
+@Test
+public void givenFile_generatingChecksum_thenVerifying() 
+  throws NoSuchAlgorithmException, IOException {
+    String filename = "src/test/resources/test_md5.txt";
+    String checksum = "5EB63BBBE01EEED093CB22BB8F5ACDC3";
+        
+    MessageDigest md = MessageDigest.getInstance("MD5");
+    md.update(Files.readAllBytes(Paths.get(filename)));
+    byte[] digest = md.digest();
+    String myChecksum = DatatypeConverter
+      .printHexBinary(digest).toUpperCase();
+        
+    assertThat(myChecksum.equals(checksum)).isTrue();
+}
+
+# SHA-1
+private static String encryptPassword(String password)
+{
+    String sha1 = "";
+    try
+    {
+        MessageDigest crypt = MessageDigest.getInstance("SHA-1");
+        crypt.reset();
+        crypt.update(password.getBytes("UTF-8"));
+        sha1 = byteToHex(crypt.digest());
+    }
+    catch(NoSuchAlgorithmException e)
+    {
+        e.printStackTrace();
+    }
+    catch(UnsupportedEncodingException e)
+    {
+        e.printStackTrace();
+    }
+    return sha1;
+}
+
+private static String byteToHex(final byte[] hash)
+{
+    Formatter formatter = new Formatter();
+    for (byte b : hash)
+    {
+        formatter.format("%02x", b);
+    }
+    String result = formatter.toString();
+    formatter.close();
+    return result;
+}
+
+#SHA 256
+MessageDigest digest = MessageDigest.getInstance("SHA-256");
+byte[] encodedhash = digest.digest(
+  originalString.getBytes(StandardCharsets.UTF_8));
+
+private static String bytesToHex(byte[] hash) {
+    StringBuilder hexString = new StringBuilder(2 * hash.length);
+    for (int i = 0; i < hash.length; i++) {
+        String hex = Integer.toHexString(0xff & hash[i]);
+        if(hex.length() == 1) {
+            hexString.append('0');
+        }
+        hexString.append(hex);
+    }
+    return hexString.toString();
+}
+
+
+
