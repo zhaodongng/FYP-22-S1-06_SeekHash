@@ -1,11 +1,12 @@
+# seekhash_v3.7 added the digital signature function
+
 import sys
-import re
 from guesslang import Guess
 from collections import Counter
 
 guess = Guess()
 
-#-- Hash library function
+#-- Hash library function 
 def hash_library(lang):
 
     #--1--: Python
@@ -61,22 +62,22 @@ def hash_library(lang):
                 'ripemd320']
 
     #--4--: Solidity
-    ## Hashes are built-in
+    ## Hashes are built-in 
     if lang == "Solidity":
       hashes = ['keccak256',
                 'sha256',
                 'ripemd160']
-
+    
     #--5--: Golang
-    ## Hashes are built-in
+    ## Hashes are built-in 
     if lang == "Go":
       hashes = ['type hash',
                 'type hash32',
                 'type hash64']
-
+        
     return hashes
 
-#-- Hash strength function
+#-- Hash strength function 
 def hash_length(lang):
     hashStrengthDict = {}
     #--1--: Python
@@ -95,7 +96,7 @@ def hash_length(lang):
                           'sha3_512'  : 1024,
                           'shake_128' : 512,
                           'shake_256' : 1024}
-
+    
     #--2--: Java
     ## Hashes are retrieved from java.security.MessageDigest
     if lang == "Java":
@@ -130,19 +131,19 @@ def hash_length(lang):
                           'ripemd320' : 320}
 
     #--4--: Soliditity
-    ## Hashes are built-in
+    ## Hashes are built-in 
     if lang == "Solidity":
       hashStrengthDict = {'keccak256': 256 ,
                           'sha256'   : 256,
                           'ripemd160': 160}
-
+    
     #--5--: Golang
-    ## Hashes are built-in
+    ## Hashes are built-in 
     if lang == "Go":
       hashStrengthDict = {'hash'  : 0,
                           'hash32': 32,
                           'hash64': 64}
-
+        
     return hashStrengthDict
 
 #-- Find digital signature function
@@ -161,6 +162,7 @@ def find_digsig(lang, script):
         schnorrlist = ["schnorr_sign","schnorr_lib", "sign"]
         ECDSAlist = ["ecdsa", "sign", "verify"]
         RSAlist = ["rsa", "sign", "verify"]
+        Ed448list = ["ed448", "sign", "verify"]
 
         if all(x in script for x in EdDSAlist):
             digitalSignature = "Edwards-curve Digital Signature Algorithm(EdDSA)"
@@ -176,10 +178,13 @@ def find_digsig(lang, script):
 
         if all(x in script for x in schnorrlist):
             digitalSignature = "Schnorr Signature"
-
+        
         if all(x in script for x in RSAlist):
             digitalSignature = "RSA"
-
+        
+        if all(x in script for x in Ed448list):
+            digitalSignature = "Ed448 signing"
+        
 
     #--2--: Java
     if lang == "Java":
@@ -189,6 +194,7 @@ def find_digsig(lang, script):
         Ed25519list = ['getInstance("Ed25519")', "sign"]
         DSAlist = ["withdsa", "sign", "verify"]
         RSAlist = ['getinstance("rsa")', "sign", "verify"]
+        Ed448list = ['getInstance("Ed448")', "sign"]
 
         if all(x in script for x in ECDSAlist):
             digitalSignature = "ECDSA(Elliptic Curve Digital Signatures Algorithm)"
@@ -202,9 +208,12 @@ def find_digsig(lang, script):
         if all(x in script for x in RSAlist):
             digitalSignature = "RSA"
 
+        if all(x in script for x in Ed448list):
+            digitalSignature = "Ed448 signing"
+
     #--3--: C++
     if lang == "C++":
-
+        
         # - In-built-library
         ECDSAlist = ["ckecc", "ecdsa", "sign", "verify"]
         DSAlist = ["ckdsa","dsa", "sign", "verify"]
@@ -219,7 +228,7 @@ def find_digsig(lang, script):
 
         if all(x in script for x in Ed25519list):
             digitalSignature = "Ed25519 signing"
-
+        
         if all(x in script for x in RSAlist):
             digitalSignature = "RSA"
 
@@ -233,7 +242,7 @@ def find_digsig(lang, script):
             digitalSignature = "Smart Contract"
 
     #--5--: Golang
-    ## Hashes are built-in
+    ## Hashes are built-in 
     if lang == "Go":
 
         # - In-built-library
@@ -243,16 +252,16 @@ def find_digsig(lang, script):
 
         if all(x in script for x in ECDSAlist):
             digitalSignature = "ECDSA(Elliptic Curve Digital Signatures Algorithm)"
-
+        
         if all(x in script for x in Ed25519list):
             digitalSignature = "Ed25519 signing"
-
+        
         if all(x in script for x in RSAlist):
             digitalSignature = "RSA"
-
+    
     return digitalSignature
 
-#-- Check programming language if file extension is
+#-- Check programming language if file extension is 
 #-- 1. ".txt" (normal text file)
 #-- 2. ".c" (Because Golang and C have the same extension)
 def guess_language(file):
@@ -260,7 +269,7 @@ def guess_language(file):
         data = readFile.read()
         name = guess.language_name(data)
         prob = guess.probabilities(data)
-        #print(name)
+        print(name)
     return name, prob
 
 # detect solidity
@@ -295,10 +304,10 @@ def detectSolidity(script):
     elif (language == "" and prob == ""):
         for x in solList:
             if x in uniqueTXT:
-                wordCount += 1
+                wordCount += 1       
         if wordCount >= 3:
             language = "Solidity"
-            prob = "Above 95%"
+            prob = "Above 80%"
     else:
         language = ""
         prob = ""
@@ -312,7 +321,7 @@ def detectPython(script):
     wordCount = 0
     uniqueTXT = " "
 
-    pyList = ["def", "__init__", "self.", "import hashlib", "else:", "#",
+    pyList = ["def", "__init__", "self.", "import hashlib", "else:", "#", 
               "elif", "elif:", "hexdigest", "with open", "try:", "print",
               "crypto.publicKey","crypto.hash", "crypto.signature", "from", "break"]
 
@@ -330,10 +339,10 @@ def detectPython(script):
     for x in pyList:
         if x in uniqueTXT:
             wordCount += 1
-
+    
     if wordCount >= 3:
         language = "Python"
-        prob = "Above 95%"
+        prob = "Above 80%"
     else:
         language = ""
         prob = ""
@@ -347,9 +356,10 @@ def find_HashFunction(script, hashes):
         lookup = x
         with open(script, 'r') as SrcFile:
             for num, line in enumerate(SrcFile, 1):
-                line = line.lower()
+                line = line.lower() 
                 if lookup in line:
-                    displays = f'{num}: {lookup},'
+                    displays = f'{lookup}:{num},'
+                    #print(display)
                     output += displays
     return output
 
@@ -395,22 +405,22 @@ def platform(lang):
     output = ""
 
     if lang == "Python":
-        platforms = ["Ethereum",
-                     "Hyperledger Fabric",
-                     "Steem",
+        platforms = ["Ethereum", 
+                     "Hyperledger Fabric", 
+                     "Steem", 
                      "NEO"]
 
     if lang == "Java":
-        platforms = ["Ethereum",
-                     "IOTA",
-                     "NEM",
+        platforms = ["Ethereum", 
+                     "IOTA", 
+                     "NEM", 
                      "Hyperledger Fabric",
                      "NEO"]
 
     if lang == "C++":
-        platforms = ["Bitcoin",
-                     "Ripple",
-                     "Litecoin",
+        platforms = ["Bitcoin", 
+                     "Ripple", 
+                     "Litecoin", 
                      "Monero",
                      "EOS",
                      "Stellar",
@@ -420,9 +430,9 @@ def platform(lang):
         platforms = ["Ethereum"]
 
     if lang == "Go":
-        platforms = ["Ethereum",
-                     "Hyperledger Fabric",
-                     "Dero",
+        platforms = ["Ethereum", 
+                     "Hyperledger Fabric", 
+                     "Dero", 
                      "GoChain"]
 
     for platform in platforms:
@@ -430,11 +440,90 @@ def platform(lang):
                 output += platforms[-1]
             else:
                 output += platform
-                output += ", "
+                output += ","
     return output
 
-def main():
+# display digital signature information
+def displayInfoDS(digitalSignature):
+    infoDict = {}
 
+    if digitalSignature == "Edwards-curve Digital Signature Algorithm(EdDSA)":
+        infoDict = { "Computational Cost                " : "Low",
+                     "Key generation                    " : "Fastest",
+                     "Security Level                    " : "High - It can prevent brute force attack and side channel attack",
+                     "Collision resistance              " : "Yes",
+                     "Hash Used                         " : "SHA512",
+                     "Algorithm used                    " : "Elliptic Curves(Edwards Curve)",
+                     "Implementation                    " : "Hard and complex",
+                     "Signing and Verification Algorithm" : "RFC 8032(Fast)"
+                   }
+    elif digitalSignature == "Ed25519":
+	    infoDict = { "Computational Cost                " : "Low",
+			         "Key Generation                    " : "Fast",
+			         "Security Level                    " : "High (Prevent Brute Force Attack and Side Channel Attack)",
+			         "Collision Resistance              " : "Yes",
+			         "Hash Used                         " : "SHA-521",
+			         "Algorithm Used                    " : "Elliptic Curves (Curve 25519)",
+			         "Implementation                    " : "Hard and complex",
+			         "Signing and Verification Algorithm" : "RFC 8032 (Fast)"
+			        }
+
+    elif digitalSignature == "Digital Signature Algorithm (DSA)":
+	    infoDict = { "Computational Cost                " : "Low",
+			         "Key Generation                    " : "Faster compared to RSA",
+		             "Security Level                    " : "Low (The private key might be revealed)",
+			         "Collision Resistance              " : "No",
+			         "Weak Against                      " : "Weak against collision resistance and prefix collision attack",
+			         "Hash Used                         " : "SHA-1",
+			         "Algorithm Used                    " : "Discrete Logarithm Problem & Modular Exponentiation",
+			         "Implementation                    " : "Easy",
+			         "Signing and Verification Algorithm" : "RFC 6979"
+			        }
+    
+    elif digitalSignature == "RSA":
+	    infoDict = { "Computational Cost                " : "High",
+			         "Key Generation                    " : "Slow",
+		             "Security Level                    " : "Low (Vulnerable to Shor's algorithm and brute force attack)",
+			         "Collision Resistance              " : "Yes",
+			         "Weak Against                      " : "Multiplicative attack",
+			         "Hash Used                         " : "SHA-1",
+			         "Algorithm Used                    " : "Integer Factorization",
+			         "Implementation                    " : "Easy"
+			        }
+    
+    elif digitalSignature == "ECDSA(Elliptic Curve Digital Signatures Algorithm)":
+	    infoDict = { "Key Generation                    " : "Faster than RSA",
+		             "Security Level                    " : "Medium (Vulnerable to fault attack)",
+			         "Collision Resistance              " : "Yes",
+			         "Hash Used                         " : "SHA-512",
+			         "Algorithm Used                    " : "Elliptic Curves(NIST P-521 / Curve secp256k1",
+			         "Implementation                    " : "More complicated than RSA",
+                     "Signing and Verification Algorithm" : "RFC6919"
+			        }
+                    
+    elif digitalSignature == "ElGamal":
+	    infoDict = { "Computational Cost                " : "Low",
+                     "Key Generation                    " : "Fast",
+		             "Security Level                    " : "Based on complexity of solving discrete logarithm",
+			         "Collision Resistance              " : "No",
+                     "Weak Against                      " : "Weak against collision resistance",
+			         "Algorithm Used                    " : "Discrete Logarithm Problem and Modular Exponentiation Problem",
+			         "Implementation                    " : "Rarely used"
+			        }     
+    elif digitalSignature == "Schnorr Signature":
+	    infoDict = { "Computational Cost                " : "Low",
+                     "Key Generation                    " : "Fast",
+		             "Security Level                    " : "Medium",
+			         "Algorithm Used                    " : "Discrete Algorithm"
+			        }
+
+    else:
+        infoDict = {}
+    
+    return infoDict
+
+def main():
+    
     past_Attacks = { 'md2' : 'MD2 is considered a weak hash, superseded by MD5(Weak against collisions) ',
                      'md4' : 'MD4 is considered a weak hash, superseded by MD5(Weak against collisions)',
                      'md5' : 'MD5 is weak against collision resistance, prefix collision attacks, pre-image resistance attacks(theory) and length extension attacks',
@@ -444,16 +533,19 @@ def main():
                     }
     past_attacks_done = []
 
-    #-1- Script input
-    script = sys.argv[1]
     hashLengthDict = {}
+    digitalSignatureInfo = {}
     digitalSignature = " "
     outputTxt = ""
     language = ""
     prob = ""
 
-    outputTxt += script + ";"
+    #-1- Script input
+    script = sys.argv[1]
+    script = script.lower()
 
+    outputTxt += script + ";"
+    
     #-2- Check if script is ".txt", otherwise check what language is it
     # If True, its .txt extension, if False, check script extension.
     if check_txt(script) == True:
@@ -471,14 +563,14 @@ def main():
             language, prob = guess_language(script)
     else:
         language, prob = check_ext(script)
-
+    
     if (language == "Python" or language == "Solidity"):
         first_prob = prob
     elif prob == "1":
         first_prob = "1"
-    else:
+    else:    
         first_prob = str(round(prob[0][1],3))
-
+    
     outputTxt += language + ";"
     output = platform(language)
     outputTxt += f"{output};"
@@ -486,14 +578,14 @@ def main():
 
     #print(first_prob)
 
-    #-3- Read the contents from script
+    #-3- Read the contents from script 
     with open(script) as f:
         scriptContent = f.read()
         contents = scriptContent.lower()
-
+    
     #-4- Getting the hash functions from hash library based on the programming language
     hashes = hash_library(language)
-
+    
     #-5- Single out the hash functions within the script
     hashesFound = find_HashFunction(script, hashes)
     hashesFound = hashesFound[:-1]
@@ -501,7 +593,7 @@ def main():
 
     #print(hashesFound)
     outputTxt += hashesFound
-
+    
     #-6- Find the hash length and output the hash strength
     hashLengthDict = hash_length(language)
     found_array = []
@@ -509,20 +601,30 @@ def main():
         for Dict_key in hashLengthDict.keys():
             if Dict_key in hash_found and Dict_key not in found_array:
                 found_array.append(Dict_key)
-                outputTxt += "{}-{}bits,".format(Dict_key.upper(), hashLengthDict[Dict_key])
-    outputTxt += ";"
+                outputTxt += "{}-{}bits-".format(Dict_key.upper(), hashLengthDict[Dict_key])
+              
+                for past in past_Attacks:
+                    if Dict_key.lower() == past:
+                        outputTxt += past_Attacks[Dict_key.lower()]
+                        past_attacks_done.append(Dict_key.lower())
+
+                outputTxt += ";"
 
     #-7- Find digital signature used in the programming language
     digitalSignature = find_digsig(language, contents)
-    # print("Digital Signature: " + digitalSignature)
+    print("Digital Signature: " + digitalSignature)
 
-    outputTxt = outputTxt[:-1]
-    outputTxt += ';'
+    #-8- Print information of digital signature
+    digitalSignatureInfo = displayInfoDS(digitalSignature)
+
+    for key, value in digitalSignatureInfo.items():
+        print(key, " : ", value)
+
     outputTxt += digitalSignature
     #print("Output file is stored in report.txt")
 
-    #-8- Output the report to user (using print())
-    print(outputTxt)
+    #-9- Output the report to user (using print())
+    #print(outputTxt)
 
 if __name__ == '__main__':
     main()
