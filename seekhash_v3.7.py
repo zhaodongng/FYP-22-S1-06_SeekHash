@@ -612,14 +612,15 @@ def main():
 
     #-7- Find digital signature used in the programming language
     digitalSignature = find_digsig(language, contents)
-    outputTxt += digitalSignature
+    print("Digital Signature: " + digitalSignature)
 
     #-8- Print information of digital signature
     digitalSignatureInfo = displayInfoDS(digitalSignature)
 
     for key, value in digitalSignatureInfo.items():
-        outputTxt += value + ";"
+        print(key, " : ", value)
 
+    outputTxt += digitalSignature
     #print("Output file is stored in report.txt")
 
     #-9- Output the report to user (using print())
