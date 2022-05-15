@@ -63,6 +63,48 @@ else
                 </section>
                 <!--how it work ends-->
 
+                <!-- paid_and_free -->
+                <section class="sec" id="paid_and_free">
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <!-- paid version -->
+                        <div class="col-4 text-center paid">
+                            <div class="circle_heading">
+                                <h5>Paid Version</h5>
+                            </div>
+                            
+                            <div class="list_contents">
+                                <ul class="dashed">
+                                    <div class="li_contents">
+                                        <li>- unlimited attempts to use the tool </li>
+                                        <li>- history page</li>
+                                        <li>- hash verification standalone tool</li>
+                                        <li>- hash and signature standalone tool</li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- free version -->
+                        <div class="col-4 text-center free">
+                            <div class="circle_heading">
+                                <h5>Free Version</h5>
+                            </div>
+                            
+                            <div class="list_contents">
+                                <ul class="dashed">
+                                    <div class="li_contents">
+                                        <li>- 3 limited attempts to use the tool </li>
+                                        <li>- ❌ history page</li>
+                                        <li>- ❌ hash verification standalone tool</li>
+                                        <li>- ❌ hash and signature standalone tool</li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </section>
+
                 <!--subscription-->
                 <section class="sec" id="subscription">
                     <div class="row">
@@ -113,6 +155,44 @@ else
                 </section>
                 <!--how it work ends-->
 
+                <!-- paid and free starts -->
+                <section class="sec" id="paid_and_free_m">
+                    <div class="row">
+                        <div class="col-6 paid_m">
+                            <div class="circle_heading">
+                                <h5>Paid Version</h5>
+                            </div>
+                            <div class="list_contents">
+                                <ul class="dashed">
+                                    <div class="li_contents">
+                                        <li>- unlimited attempts to use the tool </li>
+                                        <li>- history page</li>
+                                        <li>- hash verification standalone tool</li>
+                                        <li>- hash and signature standalone tool</li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6 free_m">
+                            <div class="circle_heading">
+                                <h5>Free Version</h5>
+                            </div>
+                            
+                            <div class="list_contents">
+                                <ul class="dashed">
+                                    <div class="li_contents">
+                                        <li>- 3 limited attempts to use the tool </li>
+                                        <li>- ❌ history page</li>
+                                        <li>- ❌ hash verification standalone tool</li>
+                                        <li>- ❌ hash and signature standalone tool</li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- paid and free ends -->
+
                 <div class="subscription_m">
                     <h4>Subscription</h4>
                     <form method='POST' action='#'>
@@ -122,6 +202,7 @@ else
                         <input type="submit" value="Subscribe" class="subscribe_btn" name='checkbutton'>
                     </form>
                 </div>
+
             </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
         </body>

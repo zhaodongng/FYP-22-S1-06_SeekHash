@@ -14,7 +14,7 @@
     overflow-x: hidden; 
 }
   
-  #home,#subscription{
+  #home{
     min-height: 90vh;
     display: flex;
     align-items: center;
@@ -24,8 +24,9 @@
     letter-spacing: 2px;
   }
 
-  #how_it_work{
-    min-height: 60vh;
+  #how_it_work,#subscription{
+    min-height: 90vh;
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3em;
@@ -86,13 +87,114 @@
 
 /*how it work end*/
 
+/* paid and free */
+#paid_and_free{
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+  background: #AD8BF7;
+  letter-spacing: 2px;
+}
+
+/* paid version */
+.paid{
+  margin-top: 3rem;
+}
+
+.paid .circle_heading{
+  width:6.5rem;
+  height: 6.5rem;
+  background-color: #F2F7FF;
+  clip-path: circle(50%);
+  padding: 3px 0;
+  display: block;
+  margin: auto;
+}
+
+.paid .circle_heading h5{
+  margin-top: 1.2rem;
+  color: #2C1A55;
+  font-weight: bold;
+}
+
+.paid .list_contents{
+  background-color: #2C1A55;
+  color: #F2F7FF;
+  width:18rem;
+  height: 20rem;
+  border-radius: 20%;
+  display: block;
+  margin: auto;
+  margin-top: -3.5rem;
+  text-align: left;
+}
+.paid .list_contents .dashed{
+  list-style-type: none;
+}
+
+.paid .dashed .li_contents{
+  padding-top: 4rem;
+}
+.paid .dashed li{
+  font-size: 0.9rem;
+  text-align: left;
+  padding-bottom: 1rem;
+}
+/* paid version ends */
+
+/* free version */
+.free{
+  margin-top: 3rem;
+}
+
+.free .circle_heading{
+  width:6.5rem;
+  height: 6.5rem;
+  background-color: #2C1A55;
+  clip-path: circle(50%);
+  padding: 3px 0;
+  display: block;
+  margin: auto;
+}
+
+.free .circle_heading h5{
+  margin-top: 1.2rem;
+  color: #F2F7FF;
+  font-weight: bold;
+}
+
+.free .list_contents{
+  background-color: #F2F7FF;
+  color: #2C1A55;
+  width:18rem;
+  height: 20rem;
+  border-radius: 20%;
+  display: block;
+  margin: auto;
+  margin-top: -3.5rem;
+  text-align: left;
+}
+.free .list_contents .dashed{
+  list-style-type: none;
+}
+
+.free .dashed .li_contents{
+  padding-top: 4rem;
+}
+.free .dashed li{
+  font-size: 0.9rem;
+  text-align: left;
+  padding-bottom: 1rem;
+}
+/* free version ends */
+
 /*subscription*/
   #subscription h4{
-    color:#2C1A55;
+    color:#AD8BF7;
   }
 
   #subscription a{
-    background-color: #854DFF;
+    background-color: #AD8BF7;
     color: #F2F7FF;
     border-radius: 30px;
     padding: 10px 40px;
@@ -156,16 +258,121 @@
 
 /*how it work for mobile view end*/
 
+/* paid and free mobile view */
+#paid_and_free_m{
+  min-height: 50vh;
+  background: #AD8BF7;
+  justify-content: center;
+  align-items: center;
+}
+/* paid ver */
+.paid_m{
+  margin-top: 3.5rem;
+}
+
+.paid_m .circle_heading{
+  width:5.5rem;
+  height: 5.5rem;
+  background-color: #F2F7FF;
+  clip-path: circle(50%);
+  padding: 2px 0;
+  display: block;
+  margin: auto;
+}
+
+.paid_m .circle_heading h5{
+  color: #2C1A55;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.paid_m .list_contents{
+  background-color: #2C1A55;
+  color: #F2F7FF;
+  width:10rem;
+  height: 15rem;
+  border-radius: 17%;
+  display: block;
+  margin: auto;
+  margin-top: -2.8rem;
+  text-align: left;
+}
+.paid_m .list_contents .dashed{
+  list-style-type: none;
+}
+
+.paid_m .dashed .li_contents{
+  padding-top: 3rem;
+}
+.paid_m .dashed li{
+  font-size: 0.8rem;
+  text-align: left;
+  padding-bottom: 0.8rem;
+  margin-left: -15px;
+}
+
+/* free ver */
+.free_m{
+  margin-top: 3.5rem;
+}
+
+.free_m .circle_heading{
+  width:5.5rem;
+  height: 5.5rem;
+  background-color: #2C1A55;
+  clip-path: circle(50%);
+  padding: 2px 0;
+  display: block;
+  margin: auto;
+}
+
+.free_m .circle_heading h5{
+  color: #F2F7FF;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.free_m .list_contents{
+  background-color: #F2F7FF;
+  color: #2C1A55;
+  width:10rem;
+  height: 15rem;
+  border-radius: 17%;
+  display: block;
+  margin: auto;
+  margin-top: -2.8rem;
+  text-align: left;
+}
+.free_m .list_contents .dashed{
+  list-style-type: none;
+}
+
+.free_m .dashed .li_contents{
+  padding-top: 3rem;
+}
+.free_m .dashed li{
+  font-size: 0.8rem;
+  text-align: left;
+  padding-bottom: 0.8rem;
+  margin-left: -15px;
+}
+
+/* paid and free mobile view end */
+
 /* subscription mobile view */
   .subscription_m{
     min-height: 30vh;
-    background: #AD8BF7;
+    background: #2C1A55;
   }
 
   .subscription_m h4{
     display: flex;
     justify-content: center;
-    color: #2C1A55;
+    color: #854DFF;
     font-size: 2rem;
     text-decoration: underline;
     padding: 1rem;
@@ -197,10 +404,11 @@
     border-radius: 0.7em;
     border: #854DFF;
     background-color: #854DFF;
-    color: aliceblue;
+    color: #F2F7FF;
   }
 
   .subscription_m .subscribe_btn:hover + :active{
-    background-color:#2C1A55;
+    background-color:#F2F7FF;
+    color: #854DFF;
   }
 /* subscription mobile view end*/

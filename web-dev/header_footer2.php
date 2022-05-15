@@ -11,7 +11,7 @@
         <header>
         <div class="d-none d-md-block container-fluid">
                 <div class="row" style="background-color: #F2F7FF;">
-                    <div class="col-2 d-block justify-contents-center text-center p-0 mt-1 logo">
+                    <div class="col-2 d-block justify-contents-center text-center logo">
                         <h1 class="d-inline p-0 m-0">Seek <span class="fw-bold hash"><b>#</b></span></h1>
                     </div>
                     <div class="col-10 d-flex justify-content-end nav1">
