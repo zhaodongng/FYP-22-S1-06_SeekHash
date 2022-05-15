@@ -122,27 +122,53 @@
   text-transform: capitalize;
 }
 
-
-.price{
-  background-color: #AD8BF7;
+/* pricing desktop */
+#price{
+  min-height: 40vh;
+  align-items: center;
+  justify-content: center;
+  background: #AD8BF7;
+  letter-spacing: 2px;
 }
 
-.price h3{
-  color: #F2F7FF;
+#price_m{
+  min-height: 30vh;
+  align-items: center;
+  justify-content: center;
+  background: #AD8BF7;
+  letter-spacing: 2px;
+}
+
+#price h3,#price_m h3{
   text-decoration: underline;
-  font-size: 35px;
+  padding-top: 2rem;
+  font-weight: bold;
+}
+.week{
+  margin-top: 1rem;
 }
 
-.price .card{
+.week .circle_heading{
+  width:6.5rem;
+  height: 6.5rem;
   background-color: #2C1A55;
+  clip-path: circle(50%);
+  padding: 3px 0;
+  display: block;
+  margin: auto;
 }
 
-.card h4{
+.week .circle_heading h4{
+  margin-top: 1.2rem;
   color: #F2F7FF;
+  font-weight: 1000;
 }
 
-.card h6{
+.week .circle_heading span{
+  font-size: 1rem;
+  padding: 0;
   color: #854DFF;
+
 }
 
 .team_member{

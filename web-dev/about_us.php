@@ -70,37 +70,55 @@ else
                 </div>
             </section>
 
-            <div class="price m-0 p-0">
-                <h3 class="mb-0 text-center">Pricing</h3>
-                <div class="row p-5">
-                    <div class="col-4 d-flex text-center justify-content-center">
-                        <div class="card" style="border-radius: 50%;">
-                        <div class="card-body">
-                            <h4 class="card-title mb-1 fw-bold text-center">$13</h4>
-                            <h6 class="card-subtitle mb-2 text-center">/week</h6>
+            <!-- pricing -->
+            <section class="sec d-none d-md-block" id="price">
+                    <h3 class="text-center">Pricing</h3>
+                    <div class="row">
+                        <!-- per week -->
+                        <div class="col-4 text-center week">
+                            <div class="circle_heading">
+                                <h4>$10<span class="time"><br/>/week</span></h4>
+                            </div>
                         </div>
+                        <!-- per month -->
+                        <div class="col-4 text-center week">
+                            <div class="circle_heading">
+                                <h4>$32<span class="time"><br/>/month</span></h4>
+                            </div>
+                        </div>
+                        <!-- per year -->
+                        <div class="col-4 text-center week">
+                            <div class="circle_heading">
+                                <h4>$312<span class="time"><br/>/year</span></h4>
+                            </div>
                         </div>
                     </div>
+            </section>
 
-                    <div class="col-4 d-flex text-center justify-content-center">
-                        <div class="card" style="border-radius: 50%;">
-                        <div class="card-body">
-                            <h4 class="card-title mb-1 fw-bold text-center">$32</h4>
-                            <h6 class="card-subtitle mb-2 text-center">/month</h6>
+            <!-- pricing for mobile view-->
+            <section class="sec d-md-none d-lg-none d-xl-none" id="price_m">
+                    <h3 class="text-center">Pricing</h3>
+                    <div class="row">
+                        <!-- per week -->
+                        <div class="col-4 text-center week">
+                            <div class="circle_heading">
+                                <h4>$10<span class="time"><br/>/week</span></h4>
+                            </div>
                         </div>
+                        <!-- per month -->
+                        <div class="col-4 text-center week">
+                            <div class="circle_heading">
+                                <h4>$32<span class="time"><br/>/month</span></h4>
+                            </div>
+                        </div>
+                        <!-- per year -->
+                        <div class="col-4 text-center week">
+                            <div class="circle_heading">
+                                <h4>$312<span class="time"><br/>/year</span></h4>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-4 d-flex text-center justify-content-center">
-                        <div class="card" style="border-radius: 50%;">
-                        <div class="card-body">
-                            <h4 class="card-title mb-1 fw-bold text-center">$312</h4>
-                            <h6 class="card-subtitle mb-2 text-center">/year</h6>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
 
             <div class="team_member">
                 <h3 class="text-center">Team members</h3>
