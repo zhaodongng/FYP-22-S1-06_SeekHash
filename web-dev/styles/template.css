@@ -378,28 +378,30 @@
     padding: 1rem;
   }
 
-  .subscription_m .f_name{
-    width: 11rem;
-    margin-left: 1rem;
-    margin-bottom: 0.5rem;
+  .subscription_form{
+    display: block;
+    text-align: center;
+  }
+  
+  .subscription_form .f_name , .subscription_form .l_name {
+    width: 13em;
+    border-radius: 0.4em;
+    margin: 0.3em 0em;
+    font-size: 0.8em;
   }
 
-  .subscription_m .l_name{
-    width: 11rem;
-    margin-right: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .subscription_m .email{
-    width: 22.3rem;
-    margin-left: 1rem;
-    margin-bottom: 0.5rem;
+  .subscription_form .email{
+    width: 26.3em;
+    border-radius: 0.4em;
+    margin: 0.3em 0em;
+    font-size: 0.8em;
   }
 
   .subscription_m .subscribe_btn{
     display: block;
     text-align: center;
     margin: auto;
+    margin-top: 0.6em;
     width: 10rem;
     border-radius: 0.7em;
     border: #854DFF;

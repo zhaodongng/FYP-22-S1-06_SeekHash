@@ -195,7 +195,7 @@ else
 
                 <div class="subscription_m">
                     <h4>Subscription</h4>
-                    <form method='POST' action='#'>
+                    <form method='POST' class="subscription_form" action='#'>
                         <input type="text"  name='f_name' class="f_name" autocomplete="off" placeholder="First Name" required>
                         <input type="text" name='l_name' class="l_name" autocomplete="off" placeholder="Last Name" required>
                         <input type="text" name='email' class="email" autocomplete="off" placeholder="Email" required>
